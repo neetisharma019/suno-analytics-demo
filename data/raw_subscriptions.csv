@@ -1,0 +1,5 @@
+user_id,plan_tier,is_active,current_period_start,current_period_end
+u1,free,1,2025-11-01,2025-12-01
+u2,pro,1,2025-11-02,2025-12-02
+u3,free,0,2025-11-03,2025-11-10
+

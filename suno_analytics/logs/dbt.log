@@ -1,0 +1,1034 @@
+[0m09:50:15.689915 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106ed6d80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b6805f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b6803b0>]}
+
+
+============================== 09:50:15.693189 | bf47880f-9b9c-459c-a987-dc0b2c81078b ==============================
+[0m09:50:15.693189 [info ] [MainThread]: Running with dbt=1.10.15
+[0m09:50:15.693555 [debug] [MainThread]: running dbt with arguments {'introspect': 'True', 'debug': 'False', 'quiet': 'False', 'no_print': 'None', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'indirect_selection': 'eager', 'static_parser': 'True', 'printer_width': '80', 'cache_selected_only': 'False', 'empty': 'None', 'invocation_command': 'dbt deps', 'profiles_dir': '/Users/neetisharma/.dbt', 'log_path': '/Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics/logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'write_json': 'True', 'log_format': 'default', 'log_cache_events': 'False', 'target_path': 'None', 'warn_error': 'None', 'use_colors': 'True', 'version_check': 'True', 'use_experimental_parser': 'False'}
+[0m09:50:15.774494 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'bf47880f-9b9c-459c-a987-dc0b2c81078b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b73f8f0>]}
+[0m09:50:15.785396 [info ] [MainThread]: Warning: No packages were found in packages.yml
+[0m09:50:15.785914 [info ] [MainThread]: Warning: No packages were found in packages.yml
+[0m09:50:16.189879 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 0.54849726, "process_in_blocks": "0", "process_kernel_time": 0.136465, "process_mem_max_rss": "106971136", "process_out_blocks": "0", "process_user_time": 0.784633}
+[0m09:50:16.191332 [debug] [MainThread]: Command `dbt deps` succeeded at 09:50:16.191123 after 0.55 seconds
+[0m09:50:16.191775 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1084f0a70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b7f75f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b653e60>]}
+[0m09:50:16.192098 [debug] [MainThread]: Flushing usage events
+[0m09:50:17.377154 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m09:53:38.860616 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104f71250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10773c8c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10773c680>]}
+
+
+============================== 09:53:38.864035 | dd825384-c9e6-4aeb-b856-f0423044912f ==============================
+[0m09:53:38.864035 [info ] [MainThread]: Running with dbt=1.10.15
+[0m09:53:38.864403 [debug] [MainThread]: running dbt with arguments {'use_colors': 'True', 'version_check': 'True', 'profiles_dir': '/Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics', 'debug': 'False', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt run', 'log_format': 'default', 'indirect_selection': 'eager', 'cache_selected_only': 'False', 'empty': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'log_cache_events': 'False', 'write_json': 'True', 'warn_error': 'None', 'fail_fast': 'False', 'use_experimental_parser': 'False', 'log_path': '/Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics/logs'}
+[0m09:53:39.060912 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'dd825384-c9e6-4aeb-b856-f0423044912f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1078e5070>]}
+[0m09:53:39.091959 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'dd825384-c9e6-4aeb-b856-f0423044912f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1064b1340>]}
+[0m09:53:39.093584 [info ] [MainThread]: Registered adapter: duckdb=1.10.0
+[0m09:53:39.781326 [debug] [MainThread]: checksum: 14a228079bd6df63ba81633f9a3cf44ecfaa31056ac397c602753ec895dbf885, vars: {}, profile: , target: , version: 1.10.15
+[0m09:53:39.781805 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m09:53:39.782008 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': 'dd825384-c9e6-4aeb-b856-f0423044912f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1077f7b00>]}
+[0m09:53:40.391467 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'dd825384-c9e6-4aeb-b856-f0423044912f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107c412e0>]}
+[0m09:53:40.427243 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics/target/manifest.json
+[0m09:53:40.428625 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics/target/semantic_manifest.json
+[0m09:53:40.440392 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'dd825384-c9e6-4aeb-b856-f0423044912f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107c4d160>]}
+[0m09:53:40.440662 [info ] [MainThread]: Found 7 models, 3 sources, 468 macros
+[0m09:53:40.440835 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'dd825384-c9e6-4aeb-b856-f0423044912f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107d72e10>]}
+[0m09:53:40.441771 [info ] [MainThread]: 
+[0m09:53:40.441939 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m09:53:40.442065 [info ] [MainThread]: 
+[0m09:53:40.442300 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m09:53:40.444828 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_suno_analytics'
+[0m09:53:40.477009 [debug] [ThreadPool]: Using duckdb connection "list_suno_analytics"
+[0m09:53:40.477267 [debug] [ThreadPool]: On list_suno_analytics: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "suno_analytics", "target_name": "dev", "connection_name": "list_suno_analytics"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"suno_analytics"'
+    
+  
+  
+[0m09:53:40.477412 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:53:40.492666 [debug] [ThreadPool]: SQL status: OK in 0.015 seconds
+[0m09:53:40.493654 [debug] [ThreadPool]: On list_suno_analytics: Close
+[0m09:53:40.494098 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_suno_analytics, now create_suno_analytics_main)
+[0m09:53:40.494465 [debug] [ThreadPool]: Creating schema "database: "suno_analytics"
+schema: "main"
+"
+[0m09:53:40.498102 [debug] [ThreadPool]: Using duckdb connection "create_suno_analytics_main"
+[0m09:53:40.498282 [debug] [ThreadPool]: On create_suno_analytics_main: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "suno_analytics", "target_name": "dev", "connection_name": "create_suno_analytics_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='suno_analytics'
+        and type='sqlite'
+    
+  
+[0m09:53:40.498421 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m09:53:40.499188 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m09:53:40.499988 [debug] [ThreadPool]: Using duckdb connection "create_suno_analytics_main"
+[0m09:53:40.500168 [debug] [ThreadPool]: On create_suno_analytics_main: BEGIN
+[0m09:53:40.500463 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m09:53:40.500596 [debug] [ThreadPool]: Using duckdb connection "create_suno_analytics_main"
+[0m09:53:40.500725 [debug] [ThreadPool]: On create_suno_analytics_main: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "suno_analytics", "target_name": "dev", "connection_name": "create_suno_analytics_main"} */
+
+    
+    
+        create schema if not exists "suno_analytics"."main"
+    
+[0m09:53:40.501435 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m09:53:40.501902 [debug] [ThreadPool]: On create_suno_analytics_main: COMMIT
+[0m09:53:40.502055 [debug] [ThreadPool]: Using duckdb connection "create_suno_analytics_main"
+[0m09:53:40.502177 [debug] [ThreadPool]: On create_suno_analytics_main: COMMIT
+[0m09:53:40.502393 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m09:53:40.502526 [debug] [ThreadPool]: On create_suno_analytics_main: Close
+[0m09:53:40.503263 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_suno_analytics_main, now list_suno_analytics_main)
+[0m09:53:40.506384 [debug] [ThreadPool]: Using duckdb connection "list_suno_analytics_main"
+[0m09:53:40.506543 [debug] [ThreadPool]: On list_suno_analytics_main: BEGIN
+[0m09:53:40.506665 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m09:53:40.506942 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m09:53:40.507094 [debug] [ThreadPool]: Using duckdb connection "list_suno_analytics_main"
+[0m09:53:40.507227 [debug] [ThreadPool]: On list_suno_analytics_main: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "suno_analytics", "target_name": "dev", "connection_name": "list_suno_analytics_main"} */
+select
+      'suno_analytics' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'suno_analytics'
+  
+[0m09:53:40.517101 [debug] [ThreadPool]: SQL status: OK in 0.010 seconds
+[0m09:53:40.517988 [debug] [ThreadPool]: On list_suno_analytics_main: ROLLBACK
+[0m09:53:40.518978 [debug] [ThreadPool]: Failed to rollback 'list_suno_analytics_main'
+[0m09:53:40.519121 [debug] [ThreadPool]: On list_suno_analytics_main: Close
+[0m09:53:40.519394 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'dd825384-c9e6-4aeb-b856-f0423044912f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107799790>]}
+[0m09:53:40.519661 [debug] [MainThread]: Using duckdb connection "master"
+[0m09:53:40.519805 [debug] [MainThread]: On master: BEGIN
+[0m09:53:40.519936 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m09:53:40.520245 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m09:53:40.520390 [debug] [MainThread]: On master: COMMIT
+[0m09:53:40.520606 [debug] [MainThread]: Using duckdb connection "master"
+[0m09:53:40.520731 [debug] [MainThread]: On master: COMMIT
+[0m09:53:40.520948 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m09:53:40.521076 [debug] [MainThread]: On master: Close
+[0m09:53:40.522587 [debug] [Thread-1 (]: Began running node model.suno_analytics.stg_events
+[0m09:53:40.522832 [info ] [Thread-1 (]: 1 of 7 START sql view model main.stg_events .................................... [RUN]
+[0m09:53:40.523029 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_suno_analytics_main, now model.suno_analytics.stg_events)
+[0m09:53:40.523188 [debug] [Thread-1 (]: Began compiling node model.suno_analytics.stg_events
+[0m09:53:40.526682 [debug] [Thread-1 (]: Writing injected SQL for node "model.suno_analytics.stg_events"
+[0m09:53:40.527327 [debug] [Thread-1 (]: Began executing node model.suno_analytics.stg_events
+[0m09:53:40.542167 [debug] [Thread-1 (]: Writing runtime sql for node "model.suno_analytics.stg_events"
+[0m09:53:40.543103 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.stg_events"
+[0m09:53:40.543343 [debug] [Thread-1 (]: On model.suno_analytics.stg_events: BEGIN
+[0m09:53:40.543498 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m09:53:40.543918 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:53:40.544101 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.stg_events"
+[0m09:53:40.544273 [debug] [Thread-1 (]: On model.suno_analytics.stg_events: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "suno_analytics", "target_name": "dev", "node_id": "model.suno_analytics.stg_events"} */
+
+  
+  create view "suno_analytics"."main"."stg_events__dbt_tmp" as (
+    with source as (
+    select * from read_csv('../data/raw_events.csv', header=true, auto_detect=true)
+),
+
+renamed as (
+    select
+        event_id,
+        cast(event_timestamp as timestamp) as event_timestamp,
+        user_id,
+        session_id,
+        song_id,
+        event_type,
+        prompt_text,
+        model_version,
+        platform,
+        country,
+        properties,
+        cast(event_timestamp as date) as event_date
+    from source
+),
+
+parsed as (
+    select
+        *,
+        json_extract(properties, '$.duration_sec')::int as duration_sec,
+        json_extract(properties, '$.genre')::varchar as genre,
+        json_extract(properties, '$.mood')::varchar as mood
+    from renamed
+)
+
+select * from parsed
+  );
+
+[0m09:53:40.549901 [debug] [Thread-1 (]: SQL status: OK in 0.005 seconds
+[0m09:53:40.553120 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.stg_events"
+[0m09:53:40.553302 [debug] [Thread-1 (]: On model.suno_analytics.stg_events: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "suno_analytics", "target_name": "dev", "node_id": "model.suno_analytics.stg_events"} */
+alter view "suno_analytics"."main"."stg_events__dbt_tmp" rename to "stg_events"
+[0m09:53:40.554612 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m09:53:40.560727 [debug] [Thread-1 (]: On model.suno_analytics.stg_events: COMMIT
+[0m09:53:40.560933 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.stg_events"
+[0m09:53:40.561078 [debug] [Thread-1 (]: On model.suno_analytics.stg_events: COMMIT
+[0m09:53:40.563155 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m09:53:40.566232 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.stg_events"
+[0m09:53:40.566436 [debug] [Thread-1 (]: On model.suno_analytics.stg_events: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "suno_analytics", "target_name": "dev", "node_id": "model.suno_analytics.stg_events"} */
+
+      drop view if exists "suno_analytics"."main"."stg_events__dbt_backup" cascade
+    
+[0m09:53:40.566808 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:53:40.568272 [debug] [Thread-1 (]: On model.suno_analytics.stg_events: Close
+[0m09:53:40.569462 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'dd825384-c9e6-4aeb-b856-f0423044912f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1050618e0>]}
+[0m09:53:40.569839 [info ] [Thread-1 (]: 1 of 7 OK created sql view model main.stg_events ............................... [[32mOK[0m in 0.05s]
+[0m09:53:40.570146 [debug] [Thread-1 (]: Finished running node model.suno_analytics.stg_events
+[0m09:53:40.570348 [debug] [Thread-1 (]: Began running node model.suno_analytics.stg_subscriptions
+[0m09:53:40.570602 [info ] [Thread-1 (]: 2 of 7 START sql view model main.stg_subscriptions ............................. [RUN]
+[0m09:53:40.570916 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.suno_analytics.stg_events, now model.suno_analytics.stg_subscriptions)
+[0m09:53:40.571110 [debug] [Thread-1 (]: Began compiling node model.suno_analytics.stg_subscriptions
+[0m09:53:40.572872 [debug] [Thread-1 (]: Writing injected SQL for node "model.suno_analytics.stg_subscriptions"
+[0m09:53:40.573422 [debug] [Thread-1 (]: Began executing node model.suno_analytics.stg_subscriptions
+[0m09:53:40.575304 [debug] [Thread-1 (]: Writing runtime sql for node "model.suno_analytics.stg_subscriptions"
+[0m09:53:40.575717 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.stg_subscriptions"
+[0m09:53:40.575924 [debug] [Thread-1 (]: On model.suno_analytics.stg_subscriptions: BEGIN
+[0m09:53:40.576091 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m09:53:40.576464 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:53:40.576647 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.stg_subscriptions"
+[0m09:53:40.576820 [debug] [Thread-1 (]: On model.suno_analytics.stg_subscriptions: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "suno_analytics", "target_name": "dev", "node_id": "model.suno_analytics.stg_subscriptions"} */
+
+  
+  create view "suno_analytics"."main"."stg_subscriptions__dbt_tmp" as (
+    with source as (
+    select * from read_csv('../data/raw_subscriptions.csv', header=true, auto_detect=true)
+),
+
+renamed as (
+    select
+        user_id,
+        plan_tier,
+        cast(is_active as boolean) as is_active,
+        cast(current_period_start as date) as current_period_start,
+        cast(current_period_end as date) as current_period_end
+    from source
+)
+
+select * from renamed
+  );
+
+[0m09:53:40.578848 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m09:53:40.580511 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.stg_subscriptions"
+[0m09:53:40.580683 [debug] [Thread-1 (]: On model.suno_analytics.stg_subscriptions: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "suno_analytics", "target_name": "dev", "node_id": "model.suno_analytics.stg_subscriptions"} */
+alter view "suno_analytics"."main"."stg_subscriptions__dbt_tmp" rename to "stg_subscriptions"
+[0m09:53:40.581021 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:53:40.581630 [debug] [Thread-1 (]: On model.suno_analytics.stg_subscriptions: COMMIT
+[0m09:53:40.581791 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.stg_subscriptions"
+[0m09:53:40.581932 [debug] [Thread-1 (]: On model.suno_analytics.stg_subscriptions: COMMIT
+[0m09:53:40.582787 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m09:53:40.584133 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.stg_subscriptions"
+[0m09:53:40.584309 [debug] [Thread-1 (]: On model.suno_analytics.stg_subscriptions: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "suno_analytics", "target_name": "dev", "node_id": "model.suno_analytics.stg_subscriptions"} */
+
+      drop view if exists "suno_analytics"."main"."stg_subscriptions__dbt_backup" cascade
+    
+[0m09:53:40.584577 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:53:40.585172 [debug] [Thread-1 (]: On model.suno_analytics.stg_subscriptions: Close
+[0m09:53:40.585422 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'dd825384-c9e6-4aeb-b856-f0423044912f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107de0890>]}
+[0m09:53:40.585699 [info ] [Thread-1 (]: 2 of 7 OK created sql view model main.stg_subscriptions ........................ [[32mOK[0m in 0.01s]
+[0m09:53:40.585942 [debug] [Thread-1 (]: Finished running node model.suno_analytics.stg_subscriptions
+[0m09:53:40.586105 [debug] [Thread-1 (]: Began running node model.suno_analytics.stg_users
+[0m09:53:40.586383 [info ] [Thread-1 (]: 3 of 7 START sql view model main.stg_users ..................................... [RUN]
+[0m09:53:40.586655 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.suno_analytics.stg_subscriptions, now model.suno_analytics.stg_users)
+[0m09:53:40.586828 [debug] [Thread-1 (]: Began compiling node model.suno_analytics.stg_users
+[0m09:53:40.587909 [debug] [Thread-1 (]: Writing injected SQL for node "model.suno_analytics.stg_users"
+[0m09:53:40.588318 [debug] [Thread-1 (]: Began executing node model.suno_analytics.stg_users
+[0m09:53:40.589931 [debug] [Thread-1 (]: Writing runtime sql for node "model.suno_analytics.stg_users"
+[0m09:53:40.590400 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.stg_users"
+[0m09:53:40.590557 [debug] [Thread-1 (]: On model.suno_analytics.stg_users: BEGIN
+[0m09:53:40.590699 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m09:53:40.591093 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:53:40.591261 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.stg_users"
+[0m09:53:40.591411 [debug] [Thread-1 (]: On model.suno_analytics.stg_users: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "suno_analytics", "target_name": "dev", "node_id": "model.suno_analytics.stg_users"} */
+
+  
+  create view "suno_analytics"."main"."stg_users__dbt_tmp" as (
+    with source as (
+    select * from read_csv('../data/raw_users.csv', header=true, auto_detect=true)
+),
+
+renamed as (
+    select
+        user_id,
+        cast(signup_ts as timestamp) as signup_timestamp,
+        marketing_channel,
+        region,
+        cast(is_creator as boolean) as is_creator,
+        cast(signup_ts as date) as signup_date
+    from source
+)
+
+select * from renamed
+  );
+
+[0m09:53:40.593629 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m09:53:40.595161 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.stg_users"
+[0m09:53:40.595330 [debug] [Thread-1 (]: On model.suno_analytics.stg_users: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "suno_analytics", "target_name": "dev", "node_id": "model.suno_analytics.stg_users"} */
+alter view "suno_analytics"."main"."stg_users__dbt_tmp" rename to "stg_users"
+[0m09:53:40.595740 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:53:40.596639 [debug] [Thread-1 (]: On model.suno_analytics.stg_users: COMMIT
+[0m09:53:40.596907 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.stg_users"
+[0m09:53:40.597051 [debug] [Thread-1 (]: On model.suno_analytics.stg_users: COMMIT
+[0m09:53:40.597507 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:53:40.598943 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.stg_users"
+[0m09:53:40.599138 [debug] [Thread-1 (]: On model.suno_analytics.stg_users: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "suno_analytics", "target_name": "dev", "node_id": "model.suno_analytics.stg_users"} */
+
+      drop view if exists "suno_analytics"."main"."stg_users__dbt_backup" cascade
+    
+[0m09:53:40.599463 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:53:40.600157 [debug] [Thread-1 (]: On model.suno_analytics.stg_users: Close
+[0m09:53:40.600416 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'dd825384-c9e6-4aeb-b856-f0423044912f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1081854c0>]}
+[0m09:53:40.600691 [info ] [Thread-1 (]: 3 of 7 OK created sql view model main.stg_users ................................ [[32mOK[0m in 0.01s]
+[0m09:53:40.600936 [debug] [Thread-1 (]: Finished running node model.suno_analytics.stg_users
+[0m09:53:40.601105 [debug] [Thread-1 (]: Began running node model.suno_analytics.dim_song
+[0m09:53:40.601297 [info ] [Thread-1 (]: 4 of 7 START sql table model main.dim_song ..................................... [RUN]
+[0m09:53:40.601681 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.suno_analytics.stg_users, now model.suno_analytics.dim_song)
+[0m09:53:40.601897 [debug] [Thread-1 (]: Began compiling node model.suno_analytics.dim_song
+[0m09:53:40.603522 [debug] [Thread-1 (]: Writing injected SQL for node "model.suno_analytics.dim_song"
+[0m09:53:40.604010 [debug] [Thread-1 (]: Began executing node model.suno_analytics.dim_song
+[0m09:53:40.614934 [debug] [Thread-1 (]: Writing runtime sql for node "model.suno_analytics.dim_song"
+[0m09:53:40.615699 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.dim_song"
+[0m09:53:40.615874 [debug] [Thread-1 (]: On model.suno_analytics.dim_song: BEGIN
+[0m09:53:40.616023 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m09:53:40.616473 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:53:40.616619 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.dim_song"
+[0m09:53:40.616776 [debug] [Thread-1 (]: On model.suno_analytics.dim_song: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "suno_analytics", "target_name": "dev", "node_id": "model.suno_analytics.dim_song"} */
+
+  
+    
+    
+
+    create  table
+      "suno_analytics"."main"."dim_song__dbt_tmp"
+  
+    as (
+      with events as (
+    select * from "suno_analytics"."main"."stg_events"
+),
+
+song_generated as (
+    select
+        song_id,
+        user_id,
+        event_timestamp as created_timestamp,
+        event_date as created_date,
+        prompt_text,
+        model_version,
+        platform,
+        country,
+        duration_sec,
+        genre,
+        mood
+    from events
+    where event_type = 'song_generated'
+)
+
+select * from song_generated
+    );
+  
+  
+[0m09:53:40.623151 [debug] [Thread-1 (]: SQL status: OK in 0.006 seconds
+[0m09:53:40.625962 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.dim_song"
+[0m09:53:40.626165 [debug] [Thread-1 (]: On model.suno_analytics.dim_song: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "suno_analytics", "target_name": "dev", "node_id": "model.suno_analytics.dim_song"} */
+alter table "suno_analytics"."main"."dim_song__dbt_tmp" rename to "dim_song"
+[0m09:53:40.626483 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:53:40.628961 [debug] [Thread-1 (]: On model.suno_analytics.dim_song: COMMIT
+[0m09:53:40.629147 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.dim_song"
+[0m09:53:40.629299 [debug] [Thread-1 (]: On model.suno_analytics.dim_song: COMMIT
+[0m09:53:40.629736 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:53:40.630872 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.dim_song"
+[0m09:53:40.631023 [debug] [Thread-1 (]: On model.suno_analytics.dim_song: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "suno_analytics", "target_name": "dev", "node_id": "model.suno_analytics.dim_song"} */
+
+      drop table if exists "suno_analytics"."main"."dim_song__dbt_backup" cascade
+    
+[0m09:53:40.631348 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:53:40.632211 [debug] [Thread-1 (]: On model.suno_analytics.dim_song: Close
+[0m09:53:40.632533 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'dd825384-c9e6-4aeb-b856-f0423044912f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1082f7260>]}
+[0m09:53:40.632868 [info ] [Thread-1 (]: 4 of 7 OK created sql table model main.dim_song ................................ [[32mOK[0m in 0.03s]
+[0m09:53:40.633136 [debug] [Thread-1 (]: Finished running node model.suno_analytics.dim_song
+[0m09:53:40.633380 [debug] [Thread-1 (]: Began running node model.suno_analytics.dim_user
+[0m09:53:40.633650 [info ] [Thread-1 (]: 5 of 7 START sql table model main.dim_user ..................................... [RUN]
+[0m09:53:40.633934 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.suno_analytics.dim_song, now model.suno_analytics.dim_user)
+[0m09:53:40.634101 [debug] [Thread-1 (]: Began compiling node model.suno_analytics.dim_user
+[0m09:53:40.635926 [debug] [Thread-1 (]: Writing injected SQL for node "model.suno_analytics.dim_user"
+[0m09:53:40.636538 [debug] [Thread-1 (]: Began executing node model.suno_analytics.dim_user
+[0m09:53:40.638119 [debug] [Thread-1 (]: Writing runtime sql for node "model.suno_analytics.dim_user"
+[0m09:53:40.638511 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.dim_user"
+[0m09:53:40.638660 [debug] [Thread-1 (]: On model.suno_analytics.dim_user: BEGIN
+[0m09:53:40.638798 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m09:53:40.639134 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:53:40.639330 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.dim_user"
+[0m09:53:40.639521 [debug] [Thread-1 (]: On model.suno_analytics.dim_user: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "suno_analytics", "target_name": "dev", "node_id": "model.suno_analytics.dim_user"} */
+
+  
+    
+    
+
+    create  table
+      "suno_analytics"."main"."dim_user__dbt_tmp"
+  
+    as (
+      with users as (
+    select * from "suno_analytics"."main"."stg_users"
+),
+
+subscriptions as (
+    select * from "suno_analytics"."main"."stg_subscriptions"
+),
+
+first_song_events as (
+    select
+        user_id,
+        min(event_timestamp) as first_song_timestamp
+    from "suno_analytics"."main"."stg_events"
+    where event_type = 'song_generated'
+    group by user_id
+)
+
+select
+    u.user_id,
+    u.signup_timestamp,
+    u.signup_date,
+    u.marketing_channel,
+    u.region,
+    u.is_creator,
+    fse.first_song_timestamp,
+    s.plan_tier,
+    s.is_active as subscription_is_active,
+    s.current_period_start,
+    s.current_period_end
+from users u
+left join first_song_events fse
+    on u.user_id = fse.user_id
+left join subscriptions s
+    on u.user_id = s.user_id
+    );
+  
+  
+[0m09:53:40.648503 [debug] [Thread-1 (]: SQL status: OK in 0.009 seconds
+[0m09:53:40.650366 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.dim_user"
+[0m09:53:40.650837 [debug] [Thread-1 (]: On model.suno_analytics.dim_user: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "suno_analytics", "target_name": "dev", "node_id": "model.suno_analytics.dim_user"} */
+alter table "suno_analytics"."main"."dim_user__dbt_tmp" rename to "dim_user"
+[0m09:53:40.651346 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:53:40.652116 [debug] [Thread-1 (]: On model.suno_analytics.dim_user: COMMIT
+[0m09:53:40.655399 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.dim_user"
+[0m09:53:40.655621 [debug] [Thread-1 (]: On model.suno_analytics.dim_user: COMMIT
+[0m09:53:40.656176 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:53:40.657596 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.dim_user"
+[0m09:53:40.657820 [debug] [Thread-1 (]: On model.suno_analytics.dim_user: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "suno_analytics", "target_name": "dev", "node_id": "model.suno_analytics.dim_user"} */
+
+      drop table if exists "suno_analytics"."main"."dim_user__dbt_backup" cascade
+    
+[0m09:53:40.658122 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:53:40.658735 [debug] [Thread-1 (]: On model.suno_analytics.dim_user: Close
+[0m09:53:40.658992 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'dd825384-c9e6-4aeb-b856-f0423044912f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1082ac680>]}
+[0m09:53:40.659274 [info ] [Thread-1 (]: 5 of 7 OK created sql table model main.dim_user ................................ [[32mOK[0m in 0.03s]
+[0m09:53:40.659510 [debug] [Thread-1 (]: Finished running node model.suno_analytics.dim_user
+[0m09:53:40.659675 [debug] [Thread-1 (]: Began running node model.suno_analytics.fact_user_day
+[0m09:53:40.659856 [info ] [Thread-1 (]: 6 of 7 START sql table model main.fact_user_day ................................ [RUN]
+[0m09:53:40.660193 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.suno_analytics.dim_user, now model.suno_analytics.fact_user_day)
+[0m09:53:40.660389 [debug] [Thread-1 (]: Began compiling node model.suno_analytics.fact_user_day
+[0m09:53:40.662048 [debug] [Thread-1 (]: Writing injected SQL for node "model.suno_analytics.fact_user_day"
+[0m09:53:40.662422 [debug] [Thread-1 (]: Began executing node model.suno_analytics.fact_user_day
+[0m09:53:40.663929 [debug] [Thread-1 (]: Writing runtime sql for node "model.suno_analytics.fact_user_day"
+[0m09:53:40.664247 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.fact_user_day"
+[0m09:53:40.664670 [debug] [Thread-1 (]: On model.suno_analytics.fact_user_day: BEGIN
+[0m09:53:40.664853 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m09:53:40.665210 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:53:40.665523 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.fact_user_day"
+[0m09:53:40.665781 [debug] [Thread-1 (]: On model.suno_analytics.fact_user_day: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "suno_analytics", "target_name": "dev", "node_id": "model.suno_analytics.fact_user_day"} */
+
+  
+    
+    
+
+    create  table
+      "suno_analytics"."main"."fact_user_day__dbt_tmp"
+  
+    as (
+      with events as (
+    select * from "suno_analytics"."main"."stg_events"
+),
+
+users as (
+    select * from "suno_analytics"."main"."stg_users"
+),
+
+daily_events as (
+    select
+        user_id,
+        event_date,
+        count(case when event_type = 'song_generated' then 1 end) as songs_generated,
+        count(case when event_type = 'song_exported' then 1 end) as songs_exported,
+        count(case when event_type = 'song_extended' then 1 end) as songs_extended,
+        count(distinct song_id) as unique_songs,
+        count(distinct session_id) as unique_sessions,
+        sum(case when event_type = 'song_generated' then duration_sec else 0 end) as total_duration_sec
+    from events
+    group by user_id, event_date
+)
+
+select
+    de.user_id,
+    de.event_date,
+    u.signup_date,
+    de.songs_generated,
+    de.songs_exported,
+    de.songs_extended,
+    de.unique_songs,
+    de.unique_sessions,
+    de.total_duration_sec
+from daily_events de
+left join users u
+    on de.user_id = u.user_id
+    );
+  
+  
+[0m09:53:40.672857 [debug] [Thread-1 (]: SQL status: OK in 0.007 seconds
+[0m09:53:40.674655 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.fact_user_day"
+[0m09:53:40.674845 [debug] [Thread-1 (]: On model.suno_analytics.fact_user_day: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "suno_analytics", "target_name": "dev", "node_id": "model.suno_analytics.fact_user_day"} */
+alter table "suno_analytics"."main"."fact_user_day__dbt_tmp" rename to "fact_user_day"
+[0m09:53:40.675458 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:53:40.676394 [debug] [Thread-1 (]: On model.suno_analytics.fact_user_day: COMMIT
+[0m09:53:40.676599 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.fact_user_day"
+[0m09:53:40.676743 [debug] [Thread-1 (]: On model.suno_analytics.fact_user_day: COMMIT
+[0m09:53:40.677446 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m09:53:40.678734 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.fact_user_day"
+[0m09:53:40.678904 [debug] [Thread-1 (]: On model.suno_analytics.fact_user_day: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "suno_analytics", "target_name": "dev", "node_id": "model.suno_analytics.fact_user_day"} */
+
+      drop table if exists "suno_analytics"."main"."fact_user_day__dbt_backup" cascade
+    
+[0m09:53:40.679231 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:53:40.679931 [debug] [Thread-1 (]: On model.suno_analytics.fact_user_day: Close
+[0m09:53:40.680214 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'dd825384-c9e6-4aeb-b856-f0423044912f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1082aca40>]}
+[0m09:53:40.680520 [info ] [Thread-1 (]: 6 of 7 OK created sql table model main.fact_user_day ........................... [[32mOK[0m in 0.02s]
+[0m09:53:40.680766 [debug] [Thread-1 (]: Finished running node model.suno_analytics.fact_user_day
+[0m09:53:40.680950 [debug] [Thread-1 (]: Began running node model.suno_analytics.mrt_product_funnel
+[0m09:53:40.681268 [info ] [Thread-1 (]: 7 of 7 START sql view model main.mrt_product_funnel ............................ [RUN]
+[0m09:53:40.681611 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.suno_analytics.fact_user_day, now model.suno_analytics.mrt_product_funnel)
+[0m09:53:40.681792 [debug] [Thread-1 (]: Began compiling node model.suno_analytics.mrt_product_funnel
+[0m09:53:40.683763 [debug] [Thread-1 (]: Writing injected SQL for node "model.suno_analytics.mrt_product_funnel"
+[0m09:53:40.684389 [debug] [Thread-1 (]: Began executing node model.suno_analytics.mrt_product_funnel
+[0m09:53:40.687267 [debug] [Thread-1 (]: Writing runtime sql for node "model.suno_analytics.mrt_product_funnel"
+[0m09:53:40.687841 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.mrt_product_funnel"
+[0m09:53:40.688108 [debug] [Thread-1 (]: On model.suno_analytics.mrt_product_funnel: BEGIN
+[0m09:53:40.688261 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m09:53:40.688599 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:53:40.688738 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.mrt_product_funnel"
+[0m09:53:40.688912 [debug] [Thread-1 (]: On model.suno_analytics.mrt_product_funnel: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "suno_analytics", "target_name": "dev", "node_id": "model.suno_analytics.mrt_product_funnel"} */
+
+  
+  create view "suno_analytics"."main"."mrt_product_funnel__dbt_tmp" as (
+    with users as (
+    select * from "suno_analytics"."main"."dim_user"
+),
+
+events as (
+    select * from "suno_analytics"."main"."stg_events"
+),
+
+subscriptions as (
+    select * from "suno_analytics"."main"."stg_subscriptions"
+),
+
+user_events as (
+    select
+        user_id,
+        min(case when event_type = 'song_generated' then event_timestamp end) as first_song_timestamp,
+        min(case when event_type = 'song_exported' then event_timestamp end) as first_export_timestamp
+    from events
+    group by user_id
+),
+
+funnel as (
+    select
+        u.user_id,
+        u.signup_timestamp,
+        ue.first_song_timestamp,
+        ue.first_export_timestamp,
+        s.plan_tier,
+        case when s.plan_tier in ('pro', 'premium') then 1 else 0 end as is_paid
+    from users u
+    left join user_events ue
+        on u.user_id = ue.user_id
+    left join subscriptions s
+        on u.user_id = s.user_id
+        and s.is_active = true
+)
+
+select
+    count(distinct user_id) as total_signups,
+    count(distinct case when first_song_timestamp is not null then user_id end) as users_with_first_song,
+    count(distinct case when first_export_timestamp is not null then user_id end) as users_with_first_export,
+    count(distinct case when is_paid = 1 then user_id end) as paid_users
+from funnel
+  );
+
+[0m09:53:40.692099 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m09:53:40.694086 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.mrt_product_funnel"
+[0m09:53:40.694315 [debug] [Thread-1 (]: On model.suno_analytics.mrt_product_funnel: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "suno_analytics", "target_name": "dev", "node_id": "model.suno_analytics.mrt_product_funnel"} */
+alter view "suno_analytics"."main"."mrt_product_funnel__dbt_tmp" rename to "mrt_product_funnel"
+[0m09:53:40.694791 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:53:40.695536 [debug] [Thread-1 (]: On model.suno_analytics.mrt_product_funnel: COMMIT
+[0m09:53:40.695705 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.mrt_product_funnel"
+[0m09:53:40.695846 [debug] [Thread-1 (]: On model.suno_analytics.mrt_product_funnel: COMMIT
+[0m09:53:40.696954 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m09:53:40.698343 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.mrt_product_funnel"
+[0m09:53:40.698515 [debug] [Thread-1 (]: On model.suno_analytics.mrt_product_funnel: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "suno_analytics", "target_name": "dev", "node_id": "model.suno_analytics.mrt_product_funnel"} */
+
+      drop view if exists "suno_analytics"."main"."mrt_product_funnel__dbt_backup" cascade
+    
+[0m09:53:40.698786 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:53:40.699369 [debug] [Thread-1 (]: On model.suno_analytics.mrt_product_funnel: Close
+[0m09:53:40.699614 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'dd825384-c9e6-4aeb-b856-f0423044912f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108339610>]}
+[0m09:53:40.699892 [info ] [Thread-1 (]: 7 of 7 OK created sql view model main.mrt_product_funnel ....................... [[32mOK[0m in 0.02s]
+[0m09:53:40.700122 [debug] [Thread-1 (]: Finished running node model.suno_analytics.mrt_product_funnel
+[0m09:53:40.700773 [debug] [MainThread]: Using duckdb connection "master"
+[0m09:53:40.700970 [debug] [MainThread]: On master: BEGIN
+[0m09:53:40.701094 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m09:53:40.701421 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m09:53:40.701633 [debug] [MainThread]: On master: COMMIT
+[0m09:53:40.701783 [debug] [MainThread]: Using duckdb connection "master"
+[0m09:53:40.701912 [debug] [MainThread]: On master: COMMIT
+[0m09:53:40.702192 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m09:53:40.702356 [debug] [MainThread]: On master: Close
+[0m09:53:40.702542 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m09:53:40.702662 [debug] [MainThread]: Connection 'model.suno_analytics.mrt_product_funnel' was properly closed.
+[0m09:53:40.702828 [info ] [MainThread]: 
+[0m09:53:40.702974 [info ] [MainThread]: Finished running 3 table models, 4 view models in 0 hours 0 minutes and 0.26 seconds (0.26s).
+[0m09:53:40.703665 [debug] [MainThread]: Command end result
+[0m09:53:40.715016 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics/target/manifest.json
+[0m09:53:40.715993 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics/target/semantic_manifest.json
+[0m09:53:40.718808 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics/target/run_results.json
+[0m09:53:40.718956 [info ] [MainThread]: 
+[0m09:53:40.719115 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m09:53:40.719237 [info ] [MainThread]: 
+[0m09:53:40.719374 [info ] [MainThread]: Done. PASS=7 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=7
+[0m09:53:40.720925 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 1.9023149, "process_in_blocks": "0", "process_kernel_time": 0.258649, "process_mem_max_rss": "178503680", "process_out_blocks": "0", "process_user_time": 1.748743}
+[0m09:53:40.721253 [debug] [MainThread]: Command `dbt run` succeeded at 09:53:40.721198 after 1.90 seconds
+[0m09:53:40.721449 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1074cb290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1074ea180>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107582990>]}
+[0m09:53:40.721690 [debug] [MainThread]: Flushing usage events
+[0m09:53:42.333707 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m09:53:50.726817 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104a48d10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105868950>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105868710>]}
+
+
+============================== 09:53:50.730331 | b291b852-b3ab-44c1-a67f-a7fe7f5a0280 ==============================
+[0m09:53:50.730331 [info ] [MainThread]: Running with dbt=1.10.15
+[0m09:53:50.730635 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'use_experimental_parser': 'False', 'invocation_command': 'dbt test', 'use_colors': 'True', 'log_format': 'default', 'warn_error': 'None', 'version_check': 'True', 'log_cache_events': 'False', 'empty': 'None', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'target_path': 'None', 'profiles_dir': '/Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics', 'no_print': 'None', 'introspect': 'True', 'write_json': 'True', 'printer_width': '80', 'cache_selected_only': 'False', 'quiet': 'False', 'debug': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'fail_fast': 'False', 'indirect_selection': 'eager', 'log_path': '/Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics/logs'}
+[0m09:53:50.863180 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b291b852-b3ab-44c1-a67f-a7fe7f5a0280', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1057e9df0>]}
+[0m09:53:50.903520 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b291b852-b3ab-44c1-a67f-a7fe7f5a0280', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10326dc10>]}
+[0m09:53:50.905211 [info ] [MainThread]: Registered adapter: duckdb=1.10.0
+[0m09:53:50.971003 [debug] [MainThread]: checksum: 14a228079bd6df63ba81633f9a3cf44ecfaa31056ac397c602753ec895dbf885, vars: {}, profile: , target: , version: 1.10.15
+[0m09:53:51.044331 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m09:53:51.044592 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m09:53:51.062621 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b291b852-b3ab-44c1-a67f-a7fe7f5a0280', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105a575c0>]}
+[0m09:53:51.099004 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics/target/manifest.json
+[0m09:53:51.100535 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics/target/semantic_manifest.json
+[0m09:53:51.117580 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b291b852-b3ab-44c1-a67f-a7fe7f5a0280', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105f20b00>]}
+[0m09:53:51.117894 [info ] [MainThread]: Found 7 models, 3 sources, 468 macros
+[0m09:53:51.118106 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b291b852-b3ab-44c1-a67f-a7fe7f5a0280', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1058da8a0>]}
+[0m09:53:51.119062 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m09:53:51.120020 [debug] [MainThread]: Command end result
+[0m09:53:51.132120 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics/target/manifest.json
+[0m09:53:51.133368 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics/target/semantic_manifest.json
+[0m09:53:51.135106 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics/target/run_results.json
+[0m09:53:51.136166 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 0.45212513, "process_in_blocks": "0", "process_kernel_time": 0.18414, "process_mem_max_rss": "135331840", "process_out_blocks": "0", "process_user_time": 1.092777}
+[0m09:53:51.136486 [debug] [MainThread]: Command `dbt test` succeeded at 09:53:51.136430 after 0.45 seconds
+[0m09:53:51.136743 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105868980>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105ee1e80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105ecac90>]}
+[0m09:53:51.136927 [debug] [MainThread]: Flushing usage events
+[0m09:53:52.302074 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m09:54:06.060967 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107c3b260>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108ad09b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108ad07a0>]}
+
+
+============================== 09:54:06.064317 | 9a4f279c-4e50-463f-a180-82a513a79fc5 ==============================
+[0m09:54:06.064317 [info ] [MainThread]: Running with dbt=1.10.15
+[0m09:54:06.064620 [debug] [MainThread]: running dbt with arguments {'target_path': 'None', 'fail_fast': 'False', 'log_cache_events': 'False', 'invocation_command': 'dbt run --select stg_events', 'static_parser': 'True', 'log_path': '/Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics/logs', 'write_json': 'True', 'partial_parse': 'True', 'empty': 'False', 'warn_error': 'None', 'quiet': 'False', 'send_anonymous_usage_stats': 'True', 'no_print': 'None', 'printer_width': '80', 'version_check': 'True', 'use_colors': 'True', 'introspect': 'True', 'indirect_selection': 'eager', 'debug': 'False', 'use_experimental_parser': 'False', 'cache_selected_only': 'False', 'profiles_dir': '/Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics', 'log_format': 'default', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])'}
+[0m09:54:06.235434 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '9a4f279c-4e50-463f-a180-82a513a79fc5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108bb9e50>]}
+[0m09:54:06.267279 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '9a4f279c-4e50-463f-a180-82a513a79fc5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1064d5b20>]}
+[0m09:54:06.268944 [info ] [MainThread]: Registered adapter: duckdb=1.10.0
+[0m09:54:06.328543 [debug] [MainThread]: checksum: 14a228079bd6df63ba81633f9a3cf44ecfaa31056ac397c602753ec895dbf885, vars: {}, profile: , target: , version: 1.10.15
+[0m09:54:06.386882 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m09:54:06.387134 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m09:54:06.404520 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '9a4f279c-4e50-463f-a180-82a513a79fc5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108bba450>]}
+[0m09:54:06.440547 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics/target/manifest.json
+[0m09:54:06.441889 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics/target/semantic_manifest.json
+[0m09:54:06.453202 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '9a4f279c-4e50-463f-a180-82a513a79fc5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10906db50>]}
+[0m09:54:06.453478 [info ] [MainThread]: Found 7 models, 3 sources, 468 macros
+[0m09:54:06.453658 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9a4f279c-4e50-463f-a180-82a513a79fc5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108f15280>]}
+[0m09:54:06.454479 [info ] [MainThread]: 
+[0m09:54:06.454656 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m09:54:06.454779 [info ] [MainThread]: 
+[0m09:54:06.455035 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m09:54:06.455495 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_suno_analytics'
+[0m09:54:06.485188 [debug] [ThreadPool]: Using duckdb connection "list_suno_analytics"
+[0m09:54:06.485615 [debug] [ThreadPool]: On list_suno_analytics: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "suno_analytics", "target_name": "dev", "connection_name": "list_suno_analytics"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"suno_analytics"'
+    
+  
+  
+[0m09:54:06.485783 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:54:06.502371 [debug] [ThreadPool]: SQL status: OK in 0.017 seconds
+[0m09:54:06.503319 [debug] [ThreadPool]: On list_suno_analytics: Close
+[0m09:54:06.503678 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_suno_analytics, now create_suno_analytics_main)
+[0m09:54:06.503905 [debug] [ThreadPool]: Creating schema "database: "suno_analytics"
+schema: "main"
+"
+[0m09:54:06.508171 [debug] [ThreadPool]: Using duckdb connection "create_suno_analytics_main"
+[0m09:54:06.508387 [debug] [ThreadPool]: On create_suno_analytics_main: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "suno_analytics", "target_name": "dev", "connection_name": "create_suno_analytics_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='suno_analytics'
+        and type='sqlite'
+    
+  
+[0m09:54:06.508519 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m09:54:06.509287 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m09:54:06.510045 [debug] [ThreadPool]: Using duckdb connection "create_suno_analytics_main"
+[0m09:54:06.510232 [debug] [ThreadPool]: On create_suno_analytics_main: BEGIN
+[0m09:54:06.510573 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m09:54:06.510736 [debug] [ThreadPool]: Using duckdb connection "create_suno_analytics_main"
+[0m09:54:06.510874 [debug] [ThreadPool]: On create_suno_analytics_main: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "suno_analytics", "target_name": "dev", "connection_name": "create_suno_analytics_main"} */
+
+    
+    
+        create schema if not exists "suno_analytics"."main"
+    
+[0m09:54:06.511568 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m09:54:06.511974 [debug] [ThreadPool]: On create_suno_analytics_main: COMMIT
+[0m09:54:06.512111 [debug] [ThreadPool]: Using duckdb connection "create_suno_analytics_main"
+[0m09:54:06.512237 [debug] [ThreadPool]: On create_suno_analytics_main: COMMIT
+[0m09:54:06.512448 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m09:54:06.512573 [debug] [ThreadPool]: On create_suno_analytics_main: Close
+[0m09:54:06.515257 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_suno_analytics_main, now list_suno_analytics_main)
+[0m09:54:06.518407 [debug] [ThreadPool]: Using duckdb connection "list_suno_analytics_main"
+[0m09:54:06.518592 [debug] [ThreadPool]: On list_suno_analytics_main: BEGIN
+[0m09:54:06.518718 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m09:54:06.519002 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m09:54:06.519134 [debug] [ThreadPool]: Using duckdb connection "list_suno_analytics_main"
+[0m09:54:06.519265 [debug] [ThreadPool]: On list_suno_analytics_main: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "suno_analytics", "target_name": "dev", "connection_name": "list_suno_analytics_main"} */
+select
+      'suno_analytics' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'suno_analytics'
+  
+[0m09:54:06.530122 [debug] [ThreadPool]: SQL status: OK in 0.011 seconds
+[0m09:54:06.531322 [debug] [ThreadPool]: On list_suno_analytics_main: ROLLBACK
+[0m09:54:06.532453 [debug] [ThreadPool]: Failed to rollback 'list_suno_analytics_main'
+[0m09:54:06.532654 [debug] [ThreadPool]: On list_suno_analytics_main: Close
+[0m09:54:06.533448 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '9a4f279c-4e50-463f-a180-82a513a79fc5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1090e8bf0>]}
+[0m09:54:06.533685 [debug] [MainThread]: Using duckdb connection "master"
+[0m09:54:06.533813 [debug] [MainThread]: On master: BEGIN
+[0m09:54:06.533926 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m09:54:06.534348 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m09:54:06.534563 [debug] [MainThread]: On master: COMMIT
+[0m09:54:06.534703 [debug] [MainThread]: Using duckdb connection "master"
+[0m09:54:06.534823 [debug] [MainThread]: On master: COMMIT
+[0m09:54:06.535050 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m09:54:06.535179 [debug] [MainThread]: On master: Close
+[0m09:54:06.536944 [debug] [Thread-1 (]: Began running node model.suno_analytics.stg_events
+[0m09:54:06.537292 [info ] [Thread-1 (]: 1 of 1 START sql view model main.stg_events .................................... [RUN]
+[0m09:54:06.537627 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_suno_analytics_main, now model.suno_analytics.stg_events)
+[0m09:54:06.537833 [debug] [Thread-1 (]: Began compiling node model.suno_analytics.stg_events
+[0m09:54:06.541742 [debug] [Thread-1 (]: Writing injected SQL for node "model.suno_analytics.stg_events"
+[0m09:54:06.543499 [debug] [Thread-1 (]: Began executing node model.suno_analytics.stg_events
+[0m09:54:06.560539 [debug] [Thread-1 (]: Writing runtime sql for node "model.suno_analytics.stg_events"
+[0m09:54:06.561065 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.stg_events"
+[0m09:54:06.561224 [debug] [Thread-1 (]: On model.suno_analytics.stg_events: BEGIN
+[0m09:54:06.561369 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m09:54:06.561739 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:54:06.561876 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.stg_events"
+[0m09:54:06.562032 [debug] [Thread-1 (]: On model.suno_analytics.stg_events: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "suno_analytics", "target_name": "dev", "node_id": "model.suno_analytics.stg_events"} */
+
+  
+  create view "suno_analytics"."main"."stg_events__dbt_tmp" as (
+    with source as (
+    select * from read_csv('../data/raw_events.csv', header=true, auto_detect=true)
+),
+
+renamed as (
+    select
+        event_id,
+        cast(event_timestamp as timestamp) as event_timestamp,
+        user_id,
+        session_id,
+        song_id,
+        event_type,
+        prompt_text,
+        model_version,
+        platform,
+        country,
+        properties,
+        cast(event_timestamp as date) as event_date
+    from source
+),
+
+parsed as (
+    select
+        *,
+        json_extract(properties, '$.duration_sec')::int as duration_sec,
+        json_extract(properties, '$.genre')::varchar as genre,
+        json_extract(properties, '$.mood')::varchar as mood
+    from renamed
+)
+
+select * from parsed
+  );
+
+[0m09:54:06.567474 [debug] [Thread-1 (]: SQL status: OK in 0.005 seconds
+[0m09:54:06.570570 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.stg_events"
+[0m09:54:06.570750 [debug] [Thread-1 (]: On model.suno_analytics.stg_events: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "suno_analytics", "target_name": "dev", "node_id": "model.suno_analytics.stg_events"} */
+alter view "suno_analytics"."main"."stg_events" rename to "stg_events__dbt_backup"
+[0m09:54:06.571670 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m09:54:06.573253 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.stg_events"
+[0m09:54:06.573416 [debug] [Thread-1 (]: On model.suno_analytics.stg_events: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "suno_analytics", "target_name": "dev", "node_id": "model.suno_analytics.stg_events"} */
+alter view "suno_analytics"."main"."stg_events__dbt_tmp" rename to "stg_events"
+[0m09:54:06.573729 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:54:06.579378 [debug] [Thread-1 (]: On model.suno_analytics.stg_events: COMMIT
+[0m09:54:06.579553 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.stg_events"
+[0m09:54:06.579696 [debug] [Thread-1 (]: On model.suno_analytics.stg_events: COMMIT
+[0m09:54:06.580854 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m09:54:06.584142 [debug] [Thread-1 (]: Using duckdb connection "model.suno_analytics.stg_events"
+[0m09:54:06.584338 [debug] [Thread-1 (]: On model.suno_analytics.stg_events: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "suno_analytics", "target_name": "dev", "node_id": "model.suno_analytics.stg_events"} */
+
+      drop view if exists "suno_analytics"."main"."stg_events__dbt_backup" cascade
+    
+[0m09:54:06.584803 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m09:54:06.586090 [debug] [Thread-1 (]: On model.suno_analytics.stg_events: Close
+[0m09:54:06.587113 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '9a4f279c-4e50-463f-a180-82a513a79fc5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109477f80>]}
+[0m09:54:06.587448 [info ] [Thread-1 (]: 1 of 1 OK created sql view model main.stg_events ............................... [[32mOK[0m in 0.05s]
+[0m09:54:06.587745 [debug] [Thread-1 (]: Finished running node model.suno_analytics.stg_events
+[0m09:54:06.588320 [debug] [MainThread]: Using duckdb connection "master"
+[0m09:54:06.588507 [debug] [MainThread]: On master: BEGIN
+[0m09:54:06.588636 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m09:54:06.588922 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m09:54:06.589048 [debug] [MainThread]: On master: COMMIT
+[0m09:54:06.589167 [debug] [MainThread]: Using duckdb connection "master"
+[0m09:54:06.589273 [debug] [MainThread]: On master: COMMIT
+[0m09:54:06.589507 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m09:54:06.589667 [debug] [MainThread]: On master: Close
+[0m09:54:06.589850 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m09:54:06.589962 [debug] [MainThread]: Connection 'model.suno_analytics.stg_events' was properly closed.
+[0m09:54:06.590100 [info ] [MainThread]: 
+[0m09:54:06.590239 [info ] [MainThread]: Finished running 1 view model in 0 hours 0 minutes and 0.14 seconds (0.14s).
+[0m09:54:06.590518 [debug] [MainThread]: Command end result
+[0m09:54:06.602637 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics/target/manifest.json
+[0m09:54:06.603767 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics/target/semantic_manifest.json
+[0m09:54:06.606823 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics/target/run_results.json
+[0m09:54:06.606989 [info ] [MainThread]: 
+[0m09:54:06.607188 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m09:54:06.607321 [info ] [MainThread]: 
+[0m09:54:06.607471 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=1
+[0m09:54:06.608953 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 0.5887267, "process_in_blocks": "0", "process_kernel_time": 0.2068, "process_mem_max_rss": "148455424", "process_out_blocks": "0", "process_user_time": 1.110223}
+[0m09:54:06.609230 [debug] [MainThread]: Command `dbt run` succeeded at 09:54:06.609179 after 0.59 seconds
+[0m09:54:06.609428 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1079b7320>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x108f26c60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1077441d0>]}
+[0m09:54:06.609596 [debug] [MainThread]: Flushing usage events
+[0m09:54:07.725449 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m09:54:17.746537 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1215bd9d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1235809b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x123580770>]}
+
+
+============================== 09:54:17.750080 | b76b78c6-281c-4785-8865-66ffc54ecbac ==============================
+[0m09:54:17.750080 [info ] [MainThread]: Running with dbt=1.10.15
+[0m09:54:17.750435 [debug] [MainThread]: running dbt with arguments {'use_experimental_parser': 'False', 'log_path': '/Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics/logs', 'partial_parse': 'True', 'fail_fast': 'False', 'cache_selected_only': 'False', 'debug': 'False', 'log_format': 'default', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_colors': 'True', 'log_cache_events': 'False', 'profiles_dir': '/Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics', 'send_anonymous_usage_stats': 'True', 'version_check': 'True', 'introspect': 'True', 'warn_error': 'None', 'invocation_command': 'dbt test --select stg_events', 'empty': 'None', 'write_json': 'True', 'no_print': 'None', 'indirect_selection': 'eager', 'target_path': 'None', 'quiet': 'False', 'static_parser': 'True', 'printer_width': '80'}
+[0m09:54:17.935587 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'b76b78c6-281c-4785-8865-66ffc54ecbac', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12402b950>]}
+[0m09:54:17.967209 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'b76b78c6-281c-4785-8865-66ffc54ecbac', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x121592690>]}
+[0m09:54:17.968717 [info ] [MainThread]: Registered adapter: duckdb=1.10.0
+[0m09:54:18.027369 [debug] [MainThread]: checksum: 14a228079bd6df63ba81633f9a3cf44ecfaa31056ac397c602753ec895dbf885, vars: {}, profile: , target: , version: 1.10.15
+[0m09:54:18.088877 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m09:54:18.089159 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m09:54:18.107289 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'b76b78c6-281c-4785-8865-66ffc54ecbac', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x12404dd60>]}
+[0m09:54:18.144056 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics/target/manifest.json
+[0m09:54:18.146483 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics/target/semantic_manifest.json
+[0m09:54:18.164289 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'b76b78c6-281c-4785-8865-66ffc54ecbac', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1247384d0>]}
+[0m09:54:18.164568 [info ] [MainThread]: Found 7 models, 3 sources, 468 macros
+[0m09:54:18.164723 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'b76b78c6-281c-4785-8865-66ffc54ecbac', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1246e2990>]}
+[0m09:54:18.165388 [warn ] [MainThread]: Nothing to do. Try checking your model configs and model specification args
+[0m09:54:18.166287 [debug] [MainThread]: Command end result
+[0m09:54:18.177475 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics/target/manifest.json
+[0m09:54:18.178343 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics/target/semantic_manifest.json
+[0m09:54:18.179968 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics/target/run_results.json
+[0m09:54:18.181679 [debug] [MainThread]: Resource report: {"command_name": "test", "command_success": true, "command_wall_clock_time": 0.47752678, "process_in_blocks": "0", "process_kernel_time": 0.185454, "process_mem_max_rss": "132644864", "process_out_blocks": "0", "process_user_time": 1.014541}
+[0m09:54:18.184210 [debug] [MainThread]: Command `dbt test` succeeded at 09:54:18.184085 after 0.48 seconds
+[0m09:54:18.184479 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x123501520>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x122c37f20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1243d18b0>]}
+[0m09:54:18.184663 [debug] [MainThread]: Flushing usage events
+[0m09:54:19.259398 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m09:54:29.377905 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104c64e00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105e80b30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105e808c0>]}
+
+
+============================== 09:54:29.381213 | 84a014c3-244b-458f-bbda-8d7ba832391a ==============================
+[0m09:54:29.381213 [info ] [MainThread]: Running with dbt=1.10.15
+[0m09:54:29.381560 [debug] [MainThread]: running dbt with arguments {'profiles_dir': '/Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics', 'cache_selected_only': 'False', 'invocation_command': 'dbt docs generate', 'target_path': 'None', 'warn_error': 'None', 'log_cache_events': 'False', 'partial_parse': 'True', 'write_json': 'True', 'quiet': 'False', 'introspect': 'True', 'use_colors': 'True', 'printer_width': '80', 'fail_fast': 'False', 'use_experimental_parser': 'False', 'log_format': 'default', 'static_parser': 'True', 'debug': 'False', 'version_check': 'True', 'send_anonymous_usage_stats': 'True', 'log_path': '/Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics/logs', 'empty': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'indirect_selection': 'eager', 'no_print': 'None'}
+[0m09:54:29.503002 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '84a014c3-244b-458f-bbda-8d7ba832391a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1046c91c0>]}
+[0m09:54:29.538081 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '84a014c3-244b-458f-bbda-8d7ba832391a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10540ae70>]}
+[0m09:54:29.539742 [info ] [MainThread]: Registered adapter: duckdb=1.10.0
+[0m09:54:29.598563 [debug] [MainThread]: checksum: 14a228079bd6df63ba81633f9a3cf44ecfaa31056ac397c602753ec895dbf885, vars: {}, profile: , target: , version: 1.10.15
+[0m09:54:29.657069 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m09:54:29.657319 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m09:54:29.674926 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '84a014c3-244b-458f-bbda-8d7ba832391a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106504f20>]}
+[0m09:54:29.687283 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '84a014c3-244b-458f-bbda-8d7ba832391a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107032750>]}
+[0m09:54:29.687596 [info ] [MainThread]: Found 7 models, 3 sources, 468 macros
+[0m09:54:29.687781 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '84a014c3-244b-458f-bbda-8d7ba832391a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105e829c0>]}
+[0m09:54:29.688883 [info ] [MainThread]: 
+[0m09:54:29.689106 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m09:54:29.689258 [info ] [MainThread]: 
+[0m09:54:29.689573 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m09:54:29.692017 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_suno_analytics_main'
+[0m09:54:29.723779 [debug] [ThreadPool]: Using duckdb connection "list_suno_analytics_main"
+[0m09:54:29.724095 [debug] [ThreadPool]: On list_suno_analytics_main: BEGIN
+[0m09:54:29.724276 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:54:29.737019 [debug] [ThreadPool]: SQL status: OK in 0.013 seconds
+[0m09:54:29.737235 [debug] [ThreadPool]: Using duckdb connection "list_suno_analytics_main"
+[0m09:54:29.737400 [debug] [ThreadPool]: On list_suno_analytics_main: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "suno_analytics", "target_name": "dev", "connection_name": "list_suno_analytics_main"} */
+select
+      'suno_analytics' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'suno_analytics'
+  
+[0m09:54:29.753725 [debug] [ThreadPool]: SQL status: OK in 0.016 seconds
+[0m09:54:29.754849 [debug] [ThreadPool]: On list_suno_analytics_main: ROLLBACK
+[0m09:54:29.755935 [debug] [ThreadPool]: Failed to rollback 'list_suno_analytics_main'
+[0m09:54:29.756111 [debug] [ThreadPool]: On list_suno_analytics_main: Close
+[0m09:54:29.756916 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '84a014c3-244b-458f-bbda-8d7ba832391a', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10676d6a0>]}
+[0m09:54:29.758346 [debug] [Thread-1 (]: Began running node model.suno_analytics.stg_events
+[0m09:54:29.758555 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_suno_analytics_main, now model.suno_analytics.stg_events)
+[0m09:54:29.758720 [debug] [Thread-1 (]: Began compiling node model.suno_analytics.stg_events
+[0m09:54:29.762185 [debug] [Thread-1 (]: Writing injected SQL for node "model.suno_analytics.stg_events"
+[0m09:54:29.762619 [debug] [Thread-1 (]: Began executing node model.suno_analytics.stg_events
+[0m09:54:29.763045 [debug] [Thread-1 (]: Finished running node model.suno_analytics.stg_events
+[0m09:54:29.763229 [debug] [Thread-1 (]: Began running node model.suno_analytics.stg_subscriptions
+[0m09:54:29.763484 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.suno_analytics.stg_events, now model.suno_analytics.stg_subscriptions)
+[0m09:54:29.763693 [debug] [Thread-1 (]: Began compiling node model.suno_analytics.stg_subscriptions
+[0m09:54:29.764670 [debug] [Thread-1 (]: Writing injected SQL for node "model.suno_analytics.stg_subscriptions"
+[0m09:54:29.765091 [debug] [Thread-1 (]: Began executing node model.suno_analytics.stg_subscriptions
+[0m09:54:29.765460 [debug] [Thread-1 (]: Finished running node model.suno_analytics.stg_subscriptions
+[0m09:54:29.765644 [debug] [Thread-1 (]: Began running node model.suno_analytics.stg_users
+[0m09:54:29.765840 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.suno_analytics.stg_subscriptions, now model.suno_analytics.stg_users)
+[0m09:54:29.766019 [debug] [Thread-1 (]: Began compiling node model.suno_analytics.stg_users
+[0m09:54:29.767044 [debug] [Thread-1 (]: Writing injected SQL for node "model.suno_analytics.stg_users"
+[0m09:54:29.767372 [debug] [Thread-1 (]: Began executing node model.suno_analytics.stg_users
+[0m09:54:29.767653 [debug] [Thread-1 (]: Finished running node model.suno_analytics.stg_users
+[0m09:54:29.767806 [debug] [Thread-1 (]: Began running node model.suno_analytics.dim_song
+[0m09:54:29.768019 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.suno_analytics.stg_users, now model.suno_analytics.dim_song)
+[0m09:54:29.768251 [debug] [Thread-1 (]: Began compiling node model.suno_analytics.dim_song
+[0m09:54:29.769836 [debug] [Thread-1 (]: Writing injected SQL for node "model.suno_analytics.dim_song"
+[0m09:54:29.770495 [debug] [Thread-1 (]: Began executing node model.suno_analytics.dim_song
+[0m09:54:29.770814 [debug] [Thread-1 (]: Finished running node model.suno_analytics.dim_song
+[0m09:54:29.770982 [debug] [Thread-1 (]: Began running node model.suno_analytics.dim_user
+[0m09:54:29.771190 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.suno_analytics.dim_song, now model.suno_analytics.dim_user)
+[0m09:54:29.771395 [debug] [Thread-1 (]: Began compiling node model.suno_analytics.dim_user
+[0m09:54:29.773033 [debug] [Thread-1 (]: Writing injected SQL for node "model.suno_analytics.dim_user"
+[0m09:54:29.773487 [debug] [Thread-1 (]: Began executing node model.suno_analytics.dim_user
+[0m09:54:29.773813 [debug] [Thread-1 (]: Finished running node model.suno_analytics.dim_user
+[0m09:54:29.773983 [debug] [Thread-1 (]: Began running node model.suno_analytics.fact_user_day
+[0m09:54:29.774152 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.suno_analytics.dim_user, now model.suno_analytics.fact_user_day)
+[0m09:54:29.774378 [debug] [Thread-1 (]: Began compiling node model.suno_analytics.fact_user_day
+[0m09:54:29.775948 [debug] [Thread-1 (]: Writing injected SQL for node "model.suno_analytics.fact_user_day"
+[0m09:54:29.776282 [debug] [Thread-1 (]: Began executing node model.suno_analytics.fact_user_day
+[0m09:54:29.776658 [debug] [Thread-1 (]: Finished running node model.suno_analytics.fact_user_day
+[0m09:54:29.776820 [debug] [Thread-1 (]: Began running node model.suno_analytics.mrt_product_funnel
+[0m09:54:29.777070 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.suno_analytics.fact_user_day, now model.suno_analytics.mrt_product_funnel)
+[0m09:54:29.777320 [debug] [Thread-1 (]: Began compiling node model.suno_analytics.mrt_product_funnel
+[0m09:54:29.779032 [debug] [Thread-1 (]: Writing injected SQL for node "model.suno_analytics.mrt_product_funnel"
+[0m09:54:29.779450 [debug] [Thread-1 (]: Began executing node model.suno_analytics.mrt_product_funnel
+[0m09:54:29.779892 [debug] [Thread-1 (]: Finished running node model.suno_analytics.mrt_product_funnel
+[0m09:54:29.780387 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m09:54:29.780525 [debug] [MainThread]: Connection 'model.suno_analytics.mrt_product_funnel' was properly closed.
+[0m09:54:29.781111 [debug] [MainThread]: Command end result
+[0m09:54:29.817340 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics/target/manifest.json
+[0m09:54:29.818770 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics/target/semantic_manifest.json
+[0m09:54:29.822232 [debug] [MainThread]: Wrote artifact RunExecutionResult to /Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics/target/run_results.json
+[0m09:54:29.823786 [debug] [MainThread]: Acquiring new duckdb connection 'generate_catalog'
+[0m09:54:29.823943 [info ] [MainThread]: Building catalog
+[0m09:54:29.828764 [debug] [ThreadPool]: Acquiring new duckdb connection 'suno_analytics.information_schema'
+[0m09:54:29.832337 [debug] [ThreadPool]: Using duckdb connection "suno_analytics.information_schema"
+[0m09:54:29.832522 [debug] [ThreadPool]: On suno_analytics.information_schema: BEGIN
+[0m09:54:29.832643 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m09:54:29.832988 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m09:54:29.833104 [debug] [ThreadPool]: Using duckdb connection "suno_analytics.information_schema"
+[0m09:54:29.833245 [debug] [ThreadPool]: On suno_analytics.information_schema: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "suno_analytics", "target_name": "dev", "connection_name": "suno_analytics.information_schema"} */
+with relations AS (
+      select
+        t.table_name
+        , t.database_name
+        , t.schema_name
+        , 'BASE TABLE' as table_type
+        , t.comment as table_comment
+      from duckdb_tables() t
+      WHERE t.database_name = 'suno_analytics'
+      UNION ALL
+      SELECT v.view_name as table_name
+      , v.database_name
+      , v.schema_name
+      , 'VIEW' as table_type
+      , v.comment as table_comment
+      from duckdb_views() v
+      WHERE v.database_name = 'suno_analytics'
+    )
+    select
+        'suno_analytics' as table_database,
+        r.schema_name as table_schema,
+        r.table_name,
+        r.table_type,
+        r.table_comment,
+        c.column_name,
+        c.column_index as column_index,
+        c.data_type as column_type,
+        c.comment as column_comment,
+        NULL as table_owner
+    FROM relations r JOIN duckdb_columns() c ON r.schema_name = c.schema_name AND r.table_name = c.table_name
+    WHERE (upper(r.schema_name) = upper('main'))
+    ORDER BY
+        r.schema_name,
+        r.table_name,
+        c.column_index
+[0m09:54:29.840665 [debug] [ThreadPool]: SQL status: OK in 0.007 seconds
+[0m09:54:29.842937 [debug] [ThreadPool]: On suno_analytics.information_schema: ROLLBACK
+[0m09:54:29.843408 [debug] [ThreadPool]: Failed to rollback 'suno_analytics.information_schema'
+[0m09:54:29.843538 [debug] [ThreadPool]: On suno_analytics.information_schema: Close
+[0m09:54:29.850437 [debug] [MainThread]: Wrote artifact CatalogArtifact to /Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics/target/catalog.json
+[0m09:54:29.861508 [debug] [MainThread]: Wrote artifact WritableManifest to /Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics/target/manifest.json
+[0m09:54:29.862364 [debug] [MainThread]: Wrote artifact SemanticManifest to /Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics/target/semantic_manifest.json
+[0m09:54:29.862504 [info ] [MainThread]: Catalog written to /Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics/target/catalog.json
+[0m09:54:29.864083 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": true, "command_wall_clock_time": 0.526133, "process_in_blocks": "0", "process_kernel_time": 0.195227, "process_mem_max_rss": "145506304", "process_out_blocks": "0", "process_user_time": 1.108505}
+[0m09:54:29.864451 [debug] [MainThread]: Command `dbt docs generate` succeeded at 09:54:29.864397 after 0.53 seconds
+[0m09:54:29.864630 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m09:54:29.864756 [debug] [MainThread]: Connection 'suno_analytics.information_schema' was properly closed.
+[0m09:54:29.864919 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x102bd5910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10466b5c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10098ea80>]}
+[0m09:54:29.865091 [debug] [MainThread]: Flushing usage events
+[0m09:54:31.073240 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m09:54:39.790584 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105f417f0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106e35ca0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1076b4830>]}
+
+
+============================== 09:54:39.793907 | 85a730e0-f0e7-4c46-96fd-83d123f0e8bc ==============================
+[0m09:54:39.793907 [info ] [MainThread]: Running with dbt=1.10.15
+[0m09:54:39.794235 [debug] [MainThread]: running dbt with arguments {'log_path': '/Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics/logs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'no_print': 'None', 'write_json': 'True', 'version_check': 'True', 'printer_width': '80', 'use_colors': 'True', 'profiles_dir': '/Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics', 'fail_fast': 'False', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True', 'partial_parse': 'True', 'quiet': 'False', 'introspect': 'True', 'use_experimental_parser': 'False', 'debug': 'False', 'cache_selected_only': 'False', 'log_format': 'default', 'invocation_command': 'dbt docs serve', 'empty': 'None', 'warn_error': 'None', 'log_cache_events': 'False', 'indirect_selection': 'eager', 'target_path': 'None'}
+[0m09:54:39.912133 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '85a730e0-f0e7-4c46-96fd-83d123f0e8bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1076d6d80>]}
+[0m09:54:39.942883 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '85a730e0-f0e7-4c46-96fd-83d123f0e8bc', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1068f7ce0>]}
