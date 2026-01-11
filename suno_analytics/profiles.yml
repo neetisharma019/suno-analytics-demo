@@ -1,7 +1,0 @@
-suno_analytics:
-  outputs:
-    dev:
-      type: duckdb
-      path: suno_analytics.duckdb
-      schema: main
-  target: dev

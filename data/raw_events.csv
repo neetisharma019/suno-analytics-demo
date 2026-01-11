@@ -1,7 +1,0 @@
-event_id,event_timestamp,user_id,session_id,song_id,event_type,prompt_text,model_version,platform,country,properties
-e1,2025-11-01T10:05:00Z,u1,s1,s1_song,song_generated,"lofi chill beat",v4.5,web,US,"{""duration_sec"":180,""genre"":""lofi"",""mood"":""chill""}"
-e2,2025-11-01T10:07:00Z,u1,s1,s1_song,song_exported,"",v4.5,web,US,"{}"
-e3,2025-11-02T09:10:00Z,u2,s2,s2_song,song_generated,"metal anthem",v5,web,DE,"{""duration_sec"":200,""genre"":""metal"",""mood"":""intense""}"
-e4,2025-11-02T09:30:00Z,u2,s2,s2_song,song_extended,"",v5,web,DE,"{}"
-e5,2025-11-03T12:35:00Z,u3,s3,s3_song,song_generated,"acoustic ballad",v5,web,US,"{""duration_sec"":220,""genre"":""acoustic"",""mood"":""sad""}"
-
