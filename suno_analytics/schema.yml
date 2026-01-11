@@ -1,0 +1,156 @@
+version: 2
+
+models:
+  - name: stg_events
+    description: "Staging model for event data with parsed JSON properties"
+    columns:
+      - name: event_id
+        description: "Unique identifier for each event"
+        tests:
+          - unique
+          - not_null
+      - name: event_timestamp
+        description: "Timestamp when the event occurred"
+        tests:
+          - not_null
+      - name: user_id
+        description: "User identifier"
+        tests:
+          - not_null
+      - name: event_type
+        description: "Type of event (song_generated, song_exported, song_extended)"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['song_generated', 'song_exported', 'song_extended']
+      - name: event_date
+        description: "Date of the event"
+        tests:
+          - not_null
+
+  - name: stg_users
+    description: "Staging model for user data"
+    columns:
+      - name: user_id
+        description: "Unique identifier for each user"
+        tests:
+          - unique
+          - not_null
+      - name: signup_timestamp
+        description: "Timestamp when user signed up"
+        tests:
+          - not_null
+      - name: marketing_channel
+        description: "Marketing channel that brought the user"
+        tests:
+          - accepted_values:
+              values: ['organic', 'paid_social', 'creator_referral']
+      - name: region
+        description: "User's region"
+        tests:
+          - not_null
+
+  - name: stg_subscriptions
+    description: "Staging model for subscription data"
+    columns:
+      - name: user_id
+        description: "User identifier"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_users')
+              field: user_id
+      - name: plan_tier
+        description: "Subscription plan tier"
+        tests:
+          - accepted_values:
+              values: ['free', 'pro', 'premium']
+      - name: is_active
+        description: "Whether the subscription is currently active"
+        tests:
+          - not_null
+
+  - name: dim_user
+    description: "User dimension table with signup and first song information"
+    columns:
+      - name: user_id
+        description: "Unique identifier for each user"
+        tests:
+          - unique
+          - not_null
+      - name: signup_timestamp
+        description: "Timestamp when user signed up"
+        tests:
+          - not_null
+      - name: marketing_channel
+        description: "Marketing channel that brought the user"
+        tests:
+          - not_null
+      - name: plan_tier
+        description: "Current subscription plan tier"
+
+  - name: dim_song
+    description: "Song dimension table with one row per generated song"
+    columns:
+      - name: song_id
+        description: "Unique identifier for each song"
+        tests:
+          - unique
+          - not_null
+      - name: user_id
+        description: "User who created the song"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_user')
+              field: user_id
+      - name: created_timestamp
+        description: "Timestamp when the song was generated"
+        tests:
+          - not_null
+      - name: prompt_text
+        description: "Text prompt used to generate the song"
+
+  - name: fact_user_day
+    description: "Daily user activity fact table"
+    columns:
+      - name: user_id
+        description: "User identifier"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_user')
+              field: user_id
+      - name: event_date
+        description: "Date of the activity"
+        tests:
+          - not_null
+      - name: songs_generated
+        description: "Number of songs generated on this day"
+        tests:
+          - not_null
+      - name: songs_exported
+        description: "Number of songs exported on this day"
+        tests:
+          - not_null
+
+  - name: mrt_product_funnel
+    description: "Product funnel metrics: signup → first song → first export → paid conversion"
+    columns:
+      - name: total_signups
+        description: "Total number of user signups"
+        tests:
+          - not_null
+      - name: users_with_first_song
+        description: "Number of users who generated at least one song"
+        tests:
+          - not_null
+      - name: users_with_first_export
+        description: "Number of users who exported at least one song"
+        tests:
+          - not_null
+      - name: paid_users
+        description: "Number of users with active paid subscriptions"
+        tests:
+          - not_null
+
