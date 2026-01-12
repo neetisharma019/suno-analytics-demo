@@ -1,0 +1,11 @@
+# Python/data pipeline files - not needed for React app deployment
+requirements.txt
+suno_analytics/
+data/
+dags/
+dashboard/
+*.py
+*.csv
+*.duckdb
+*.log
+

@@ -1,6 +1,7 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "framework": "vite"
+  "installCommand": "npm install",
+  "framework": "vite",
+  "ignoreCommand": "git diff --quiet HEAD^ HEAD ./src ./package.json ./vite.config.js ./tailwind.config.js ./postcss.config.js ./index.html"
 }
-
