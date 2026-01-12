@@ -276,7 +276,7 @@ GROUP BY event_date`
           <div className="flex justify-center gap-4 flex-wrap">
             <span className="px-4 py-2 bg-teal-500/20 border border-teal-500/50 rounded-lg text-teal-300 font-semibold">DuckDB</span>
             <span className="px-4 py-2 bg-orange-500/20 border border-orange-500/50 rounded-lg text-orange-300 font-semibold">dbt</span>
-            <a href="https://app.hex.tech/019afdd8-e860-700c-b0c8-831a229ab3e2/hex/Suno-Analytics-0324mSrPnSfuHpm0KslsIr/draft/logic?view=app" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-purple-500/20 border border-purple-500/50 rounded-lg text-purple-300 font-semibold hover:bg-purple-500/30 cursor-pointer">
+            <a href="https://app.hex.tech/019afdd8-e860-700c-b0c8-831a229ab3e2/app/Suno-Analytics-0324mSrPnSfuHpm0KslsIr/latest" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-purple-500/20 border border-purple-500/50 rounded-lg text-purple-300 font-semibold hover:bg-purple-500/30 cursor-pointer">
               HEX Dashboard →
             </a>
             <a href="https://github.com/neetisharma019/suno-analytics-demo" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-slate-500/20 border border-slate-500/50 rounded-lg text-slate-300 font-semibold hover:bg-slate-500/30 cursor-pointer">
@@ -473,7 +473,7 @@ GROUP BY event_date`
           <h3 className="text-2xl font-bold text-white mb-3">View the Complete Project</h3>
           <p className="text-slate-300 mb-6">Explore the full codebase and documentation</p>
           <div className="flex justify-center gap-4">
-            <a href="https://app.hex.tech/019afdd8-e860-700c-b0c8-831a229ab3e2/hex/Suno-Analytics-0324mSrPnSfuHpm0KslsIr/draft/logic?view=app" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg cursor-pointer">
+            <a href="https://app.hex.tech/019afdd8-e860-700c-b0c8-831a229ab3e2/app/Suno-Analytics-0324mSrPnSfuHpm0KslsIr/latest" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg cursor-pointer">
               View HEX Dashboard
             </a>
             <a href="https://github.com/neetisharma019/suno-analytics-demo" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white font-semibold rounded-lg cursor-pointer">
