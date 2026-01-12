@@ -1,0 +1,490 @@
+import React, { useState } from 'react';
+import { ArrowRight, Check, Database, Layers, BarChart3, TrendingUp, Users, Sparkles, Repeat, Target, Filter, Activity, X, Code } from 'lucide-react';
+import { BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Cell } from 'recharts';
+
+const SunoAnalyticsPipeline = () => {
+  const [selectedDashboard, setSelectedDashboard] = useState(null);
+  const [showSQL, setShowSQL] = useState({});
+
+  const funnelData = [
+    { stage: 'Signed up', users: 5000, percentage: 100 },
+    { stage: 'Generated first song', users: 3540, percentage: 70.8 },
+    { stage: 'Downloaded song', users: 1526, percentage: 30.5 },
+    { stage: 'Published', users: 721, percentage: 14.4 }
+  ];
+
+  const retentionData = [
+    { metric: 'Day 1', retention: 29.32 },
+    { metric: 'Day 7', retention: 10.66 }
+  ];
+
+  const engagementData = [
+    { segment: 'Publisher', retention: 27.74 },
+    { segment: 'Downloader', retention: 17.76 },
+    { segment: 'Generator', retention: 9.43 },
+    { segment: 'Viewer', retention: 0 }
+  ];
+
+  const featureData = [
+    { feature: 'Extended', adoption: 39.36 },
+    { feature: 'Remixed', adoption: 27.02 }
+  ];
+
+  const trendData = [
+    { week: 'Nov 3', extended: 16.49, remixed: 10.05 },
+    { week: 'Nov 10', extended: 27.19, remixed: 20.49 },
+    { week: 'Nov 17', extended: 31.83, remixed: 20.68 },
+    { week: 'Dec 1', extended: 31.43, remixed: 20.91 },
+    { week: 'Dec 15', extended: 30.82, remixed: 22.24 },
+    { week: 'Dec 29', extended: 40.19, remixed: 29.31 }
+  ];
+
+  const creativeData = [
+    { segment: 'Used creative', retention: 18.57 },
+    { segment: 'Did not use', retention: 4.49 }
+  ];
+
+  const activityData = [
+    { date: 'Nov 6', gen: 0.15, dl: 0.04, iter: 1.14 },
+    { date: 'Nov 13', gen: 0.55, dl: 0.21, iter: 1.35 },
+    { date: 'Nov 20', gen: 0.58, dl: 0.21, iter: 1.36 },
+    { date: 'Nov 27', gen: 0.63, dl: 0.27, iter: 1.46 },
+    { date: 'Dec 4', gen: 0.71, dl: 0.19, iter: 1.41 },
+    { date: 'Dec 11', gen: 0.65, dl: 0.16, iter: 1.35 },
+    { date: 'Dec 18', gen: 0.67, dl: 0.18, iter: 1.36 },
+    { date: 'Dec 25', gen: 0.60, dl: 0.22, iter: 1.36 },
+    { date: 'Jan 1', gen: 0.59, dl: 0.16, iter: 1.31 }
+  ];
+
+  const sqlQueries = {
+    1: `SELECT 'Signed up' AS stage, COUNT(*) AS users
+FROM main.dim_user
+UNION ALL
+SELECT 'Generated first song', COUNT(*)
+FROM main.mrt_product_funnel
+WHERE has_generated_song
+UNION ALL
+SELECT 'Downloaded song', COUNT(*)
+FROM main.mrt_product_funnel
+WHERE has_downloaded_song
+UNION ALL
+SELECT 'Published' AS stage, COUNT(*) AS users
+FROM main.mrt_product_funnel
+WHERE has_published_song = 1`,
+    2: `WITH base AS (
+  SELECT user_id, event_date,
+    MIN(event_date) OVER (PARTITION BY user_id) AS first_day
+  FROM main.fact_user_day WHERE active_flag
+)
+SELECT 'Day 1', AVG(d1_retained) FROM flags
+UNION ALL
+SELECT 'Day 7', AVG(d7_retained) FROM flags`,
+    3: `SELECT user_segment, 
+  AVG(d7_retained)*1.0 AS retention
+FROM base JOIN segment USING (user_id)
+GROUP BY user_segment`,
+    4: `SELECT event_type AS feature,
+  COUNT(DISTINCT user_id) * 1.0 / total AS adoption
+FROM main.stg_events
+WHERE event_type IN ('song_extended','song_remixed')
+GROUP BY feature`,
+    5: `SELECT
+  CASE
+    WHEN f.user_id IS NOT NULL 
+    THEN 'Used creative features'
+    ELSE 'Did not use'
+  END AS segment,
+  AVG(r.d7_retained) AS retention
+FROM retention r
+LEFT JOIN feature_users f USING (user_id)
+GROUP BY segment`,
+    6: `SELECT event_date,
+  AVG(generated_cnt) AS avg_gen,
+  AVG(downloaded_cnt) AS avg_dl,
+  AVG(extend_cnt + remix_cnt) AS avg_iter
+FROM main.fact_user_day
+WHERE active_flag
+GROUP BY event_date`
+  };
+
+  const dashboards = [
+    { id: 1, icon: TrendingUp, title: "Conversion Funnel Analysis", question: "How effectively does Suno convert new signups into successful creators and community contributors?", color: "from-blue-500 to-cyan-500", chart: "funnel" },
+    { id: 2, icon: Repeat, title: "Retention & Stickiness", question: "Do users return after the first experience, and does SUNO become sticky over time?", color: "from-purple-500 to-pink-500", chart: "retention" },
+    { id: 3, icon: Activity, title: "Engagement Drivers", question: "Which user actions appear to be strong drivers of long-term engagement?", color: "from-green-500 to-emerald-500", chart: "engagement" },
+    { id: 4, icon: Target, title: "Feature Discovery", question: "Which features are most discoverable, and how can we democratize advanced creation tools?", color: "from-orange-500 to-red-500", chart: "discovery" },
+    { id: 5, icon: Sparkles, title: "Creative Iteration", question: "Are users iterating creatively or stopping after one song? Do users who use creative features retain better?", color: "from-indigo-500 to-violet-500", chart: "creative" },
+    { id: 6, icon: Users, title: "Daily Activity Patterns", question: "Are users just experimenting, or are they engaging in deeper, iterative creation over time?", color: "from-rose-500 to-pink-500", chart: "activity" }
+  ];
+
+  const renderChart = (chart, id) => {
+    const props = { contentStyle: { backgroundColor: '#1e293b', border: '1px solid #475569' } };
+    
+    switch(chart) {
+      case 'funnel':
+        return (
+          <div className="space-y-4">
+            <ResponsiveContainer width="100%" height={260}>
+              <BarChart data={funnelData}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
+                <XAxis dataKey="stage" stroke="#94a3b8" tick={{fontSize:10}} />
+                <YAxis stroke="#94a3b8" />
+                <Tooltip {...props} />
+                <Bar dataKey="users" fill="#3b82f6" radius={[8,8,0,0]}>
+                  {funnelData.map((e,i) => <Cell key={i} fill={`rgba(59,130,246,${1-i*0.15})`} />)}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+            <div className="grid grid-cols-4 gap-2">
+              {funnelData.map((s,i) => (
+                <div key={i} className="bg-slate-700/30 rounded p-2 text-center">
+                  <div className="text-xl font-bold text-white">{s.users.toLocaleString()}</div>
+                  <div className="text-sm font-bold text-blue-400">{s.percentage}%</div>
+                  <div className="text-xs text-slate-400">{s.stage}</div>
+                </div>
+              ))}
+            </div>
+            <div className="bg-blue-900/20 border border-blue-500/30 rounded p-3">
+              <p className="text-sm text-slate-300"><strong className="text-blue-400">Finding:</strong> 70.8% generate first song (strong activation), but only 30.5% download and 14.4% publish. Major drop-off between download and publish suggests friction in sharing workflow or lack of confidence in creations.</p>
+            </div>
+          </div>
+        );
+      case 'retention':
+        return (
+          <div className="space-y-4">
+            <ResponsiveContainer width="100%" height={240}>
+              <BarChart data={retentionData}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
+                <XAxis dataKey="metric" stroke="#94a3b8" />
+                <YAxis stroke="#94a3b8" domain={[0,35]} />
+                <Tooltip {...props} />
+                <Bar dataKey="retention" fill="#8b5cf6" radius={[8,8,0,0]}>
+                  {retentionData.map((e,i) => <Cell key={i} fill={i===0 ? '#8b5cf6' : '#ec4899'} />)}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+            <div className="grid grid-cols-2 gap-2">
+              <div className="bg-purple-900/20 border border-purple-500/30 rounded p-3 text-center">
+                <div className="text-2xl font-bold text-purple-400">29.3%</div>
+                <div className="text-xs text-slate-400">Day 1</div>
+              </div>
+              <div className="bg-pink-900/20 border border-pink-500/30 rounded p-3 text-center">
+                <div className="text-2xl font-bold text-pink-400">10.7%</div>
+                <div className="text-xs text-slate-400">Day 7</div>
+              </div>
+            </div>
+          </div>
+        );
+      case 'engagement':
+        return (
+          <div className="space-y-4">
+            <ResponsiveContainer width="100%" height={240}>
+              <BarChart data={engagementData} layout="vertical">
+                <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
+                <XAxis type="number" stroke="#94a3b8" domain={[0,30]} />
+                <YAxis type="category" dataKey="segment" stroke="#94a3b8" width={100} tick={{fontSize:10}} />
+                <Tooltip {...props} />
+                <Bar dataKey="retention" fill="#10b981" radius={[0,8,8,0]} />
+              </BarChart>
+            </ResponsiveContainer>
+            <div className="bg-green-900/20 border border-green-500/30 rounded p-3">
+              <p className="text-sm text-slate-300"><strong className="text-green-400">Finding:</strong> Publishers 2.9x better retention (27.7%) vs generators (9.4%)</p>
+            </div>
+          </div>
+        );
+      case 'discovery':
+        return (
+          <div className="space-y-4">
+            <div className="grid grid-cols-2 gap-3">
+              <div>
+                <ResponsiveContainer width="100%" height={180}>
+                  <BarChart data={featureData}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
+                    <XAxis dataKey="feature" stroke="#94a3b8" tick={{fontSize:9}} />
+                    <YAxis stroke="#94a3b8" domain={[0,50]} />
+                    <Tooltip {...props} />
+                    <Bar dataKey="adoption" fill="#f97316" radius={[8,8,0,0]} />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+              <div>
+                <ResponsiveContainer width="100%" height={180}>
+                  <LineChart data={trendData}>
+                    <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
+                    <XAxis dataKey="week" stroke="#94a3b8" tick={{fontSize:8}} angle={-15} textAnchor="end" height={50} />
+                    <YAxis stroke="#94a3b8" domain={[0,45]} />
+                    <Tooltip {...props} />
+                    <Line type="monotone" dataKey="extended" stroke="#f97316" strokeWidth={2} />
+                    <Line type="monotone" dataKey="remixed" stroke="#fb923c" strokeWidth={2} />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+            <div className="bg-orange-900/20 border border-orange-500/30 rounded p-3">
+              <p className="text-sm text-slate-300"><strong className="text-orange-400">Finding:</strong> 39.4% extend songs, 27% remix - strong adoption</p>
+            </div>
+          </div>
+        );
+      case 'creative':
+        return (
+          <div className="space-y-4">
+            <ResponsiveContainer width="100%" height={220}>
+              <BarChart data={creativeData}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
+                <XAxis dataKey="segment" stroke="#94a3b8" tick={{fontSize:10}} />
+                <YAxis stroke="#94a3b8" domain={[0,25]} />
+                <Tooltip {...props} />
+                <Bar dataKey="retention" fill="#6366f1" radius={[8,8,0,0]} />
+              </BarChart>
+            </ResponsiveContainer>
+            <div className="bg-indigo-900/20 border border-indigo-500/30 rounded p-3">
+              <p className="text-sm text-slate-300"><strong className="text-indigo-400">Finding:</strong> Creative features drive 4.1x better retention (18.6% vs 4.5%)</p>
+            </div>
+          </div>
+        );
+      case 'activity':
+        return (
+          <div className="space-y-4">
+            <ResponsiveContainer width="100%" height={240}>
+              <LineChart data={activityData}>
+                <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
+                <XAxis dataKey="date" stroke="#94a3b8" tick={{fontSize:9}} angle={-15} textAnchor="end" height={50} />
+                <YAxis stroke="#94a3b8" />
+                <Tooltip {...props} />
+                <Legend />
+                <Line type="monotone" dataKey="gen" stroke="#f43f5e" strokeWidth={2} name="Gen" />
+                <Line type="monotone" dataKey="dl" stroke="#14b8a6" strokeWidth={2} name="DL" />
+                <Line type="monotone" dataKey="iter" stroke="#a855f7" strokeWidth={2} name="Iter" />
+              </LineChart>
+            </ResponsiveContainer>
+            <div className="bg-rose-900/20 border border-rose-500/30 rounded p-3">
+              <p className="text-sm text-slate-300"><strong className="text-rose-400">Finding:</strong> Avg 0.6 songs/user, 1.3 iterations - more experimentation than completion</p>
+            </div>
+          </div>
+        );
+      default: return null;
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 p-8">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-12">
+          <div className="inline-block px-4 py-2 bg-purple-500/20 border border-purple-500/50 rounded-full text-purple-300 text-sm font-semibold mb-4">Analytics Engineer Portfolio</div>
+          <h1 className="text-5xl font-bold text-white mb-4">SUNO Analytics Demo</h1>
+          <p className="text-xl text-slate-300 mb-2">Neeti Sharma • Boston, MA</p>
+          <p className="text-lg text-slate-400 mb-6 max-w-4xl mx-auto">A complete end-to-end analytics engineering project demonstrating modern data pipeline practices using DuckDB, dbt, Airflow, and Python. This project simulates an analytics engineering workflow for Suno, transforming raw event data into actionable business insights through a layered data transformation architecture.</p>
+          <div className="flex justify-center gap-4 flex-wrap">
+            <span className="px-4 py-2 bg-teal-500/20 border border-teal-500/50 rounded-lg text-teal-300 font-semibold">DuckDB</span>
+            <span className="px-4 py-2 bg-orange-500/20 border border-orange-500/50 rounded-lg text-orange-300 font-semibold">dbt</span>
+            <a href="https://app.hex.tech/019afdd8-e860-700c-b0c8-831a229ab3e2/hex/Suno-Analytics-0324mSrPnSfuHpm0KslsIr/draft/logic?view=app" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-purple-500/20 border border-purple-500/50 rounded-lg text-purple-300 font-semibold hover:bg-purple-500/30 cursor-pointer">
+              HEX Dashboard →
+            </a>
+            <a href="https://github.com/neetisharma019/suno-analytics-demo" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-slate-500/20 border border-slate-500/50 rounded-lg text-slate-300 font-semibold hover:bg-slate-500/30 cursor-pointer">
+              GitHub →
+            </a>
+          </div>
+        </div>
+
+        <div className="bg-slate-800/50 border-2 border-slate-700 rounded-2xl p-8 mb-12">
+          <h2 className="text-2xl font-bold text-white mb-8 text-center">Data Transformation Pipeline</h2>
+          <div className="space-y-8">
+            <div className="relative">
+              <div className="absolute left-8 top-16 bottom-0 w-0.5 bg-gradient-to-b from-blue-500 to-transparent"></div>
+              <div className="flex items-start gap-6">
+                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <Database className="w-8 h-8 text-white" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-white mb-3">Raw Data Sources</h3>
+                  <div className="grid grid-cols-3 gap-4">
+                    <div className="bg-slate-700/50 border border-slate-600 rounded-lg p-4">
+                      <div className="font-mono text-sm text-blue-300 font-bold mb-2">raw_events</div>
+                      <div className="text-xs text-slate-400 space-y-1">
+                        <div>• song_generated</div>
+                        <div>• song_published</div>
+                        <div>• song_downloaded</div>
+                        <div>• song_extended</div>
+                      </div>
+                    </div>
+                    <div className="bg-slate-700/50 border border-slate-600 rounded-lg p-4">
+                      <div className="font-mono text-sm text-blue-300 font-bold mb-2">raw_users</div>
+                      <div className="text-xs text-slate-400 space-y-1">
+                        <div>• signup_ts</div>
+                        <div>• marketing_channel</div>
+                        <div>• is_creator</div>
+                      </div>
+                    </div>
+                    <div className="bg-slate-700/50 border border-slate-600 rounded-lg p-4">
+                      <div className="font-mono text-sm text-blue-300 font-bold mb-2">raw_subscriptions</div>
+                      <div className="text-xs text-slate-400 space-y-1">
+                        <div>• plan_tier</div>
+                        <div>• is_active</div>
+                        <div>• period dates</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="relative">
+              <div className="absolute left-8 top-16 bottom-0 w-0.5 bg-gradient-to-b from-purple-500 to-transparent"></div>
+              <div className="flex items-start gap-6">
+                <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <Filter className="w-8 h-8 text-white" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-white mb-3">Staging Layer (dbt CTEs)</h3>
+                  <div className="grid grid-cols-3 gap-4">
+                    <div className="bg-gradient-to-br from-purple-900/30 to-purple-800/30 border border-purple-500/50 rounded-lg p-4">
+                      <div className="font-mono text-sm text-purple-300 font-bold mb-3">stg_events.sql</div>
+                      <div className="space-y-2">
+                        <div className="flex items-start gap-2">
+                          <Check className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                          <span className="text-xs text-slate-300">Cast timestamps</span>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <Check className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                          <span className="text-xs text-slate-300">Extract JSON properties</span>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <Check className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                          <span className="text-xs text-slate-300">Parse event metadata</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="bg-gradient-to-br from-purple-900/30 to-purple-800/30 border border-purple-500/50 rounded-lg p-4">
+                      <div className="font-mono text-sm text-purple-300 font-bold mb-3">stg_users.sql</div>
+                      <div className="space-y-2">
+                        <div className="flex items-start gap-2">
+                          <Check className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                          <span className="text-xs text-slate-300">Normalize timestamps</span>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <Check className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                          <span className="text-xs text-slate-300">Clean attribution</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="bg-gradient-to-br from-purple-900/30 to-purple-800/30 border border-purple-500/50 rounded-lg p-4">
+                      <div className="font-mono text-sm text-purple-300 font-bold mb-3">stg_subscriptions.sql</div>
+                      <div className="space-y-2">
+                        <div className="flex items-start gap-2">
+                          <Check className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                          <span className="text-xs text-slate-300">Type casting</span>
+                        </div>
+                        <div className="flex items-start gap-2">
+                          <Check className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+                          <span className="text-xs text-slate-300">Active status logic</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-6">
+              <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center flex-shrink-0 shadow-lg">
+                <Layers className="w-8 h-8 text-white" />
+              </div>
+              <div className="flex-1">
+                <h3 className="text-xl font-bold text-white mb-3">Core Models (Dimensions & Facts)</h3>
+                <div className="grid grid-cols-3 gap-4">
+                  <div className="bg-gradient-to-br from-green-900/30 to-green-800/30 border border-green-500/50 rounded-lg p-4">
+                    <div className="font-mono text-sm text-green-300 font-bold mb-3">dim_user.sql</div>
+                    <div className="text-xs text-slate-300 space-y-1">
+                      <div>• User profile</div>
+                      <div>• First song timestamp</div>
+                      <div>• Marketing channel</div>
+                      <div>• Creator status</div>
+                    </div>
+                  </div>
+                  <div className="bg-gradient-to-br from-green-900/30 to-green-800/30 border border-green-500/50 rounded-lg p-4">
+                    <div className="font-mono text-sm text-green-300 font-bold mb-3">dim_song.sql</div>
+                    <div className="text-xs text-slate-300 space-y-1">
+                      <div>• Song metadata</div>
+                      <div>• Genre, mood, duration</div>
+                      <div>• Model version</div>
+                      <div>• Creation events</div>
+                    </div>
+                  </div>
+                  <div className="bg-gradient-to-br from-green-900/30 to-green-800/30 border border-green-500/50 rounded-lg p-4">
+                    <div className="font-mono text-sm text-green-300 font-bold mb-3">fact_user_day.sql</div>
+                    <div className="text-xs text-slate-300 space-y-1">
+                      <div>• Daily user grain</div>
+                      <div>• Songs generated</div>
+                      <div>• Export/extend events</div>
+                      <div>• Session metrics</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="mb-12">
+          <h2 className="text-3xl font-bold text-white mb-4 text-center">HEX Dashboards</h2>
+          <p className="text-center text-slate-400 mb-8">Based on 5,000 simulated users • Real SQL queries • Click any card to expand</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {dashboards.map((d) => {
+              const Icon = d.icon;
+              const sel = selectedDashboard === d.id;
+              return (
+                <div key={d.id} className={`bg-slate-800/50 border-2 rounded-xl transition-all ${sel ? 'md:col-span-2 lg:col-span-3 border-white' : 'border-slate-700 hover:border-slate-500'}`}>
+                  <div onClick={() => setSelectedDashboard(sel ? null : d.id)} className="p-6 cursor-pointer">
+                    <div className="flex items-start gap-4">
+                      <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${d.color} flex items-center justify-center flex-shrink-0`}>
+                        <Icon className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-lg font-bold text-white mb-2">{d.title}</h3>
+                        <p className="text-xs text-slate-400 italic">{d.question}</p>
+                      </div>
+                      {sel && (
+                        <button onClick={(e) => {e.stopPropagation(); setShowSQL({...showSQL, [d.id]: !showSQL[d.id]});}} className="px-3 py-2 bg-slate-700 hover:bg-slate-600 text-white rounded-lg text-sm flex items-center gap-2">
+                          <Code className="w-4 h-4" />
+                          {showSQL[d.id] ? 'Hide' : 'Show'} SQL
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                  
+                  {sel && (
+                    <div className="px-6 pb-6">
+                      {showSQL[d.id] && (
+                        <div className="bg-slate-900 rounded-lg p-4 mb-4 font-mono text-xs text-green-400 overflow-x-auto">
+                          <pre>{sqlQueries[d.id]}</pre>
+                        </div>
+                      )}
+                      <div className="bg-slate-900/50 rounded-xl p-6">
+                        {renderChart(d.chart, d.id)}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        <div className="text-center bg-gradient-to-r from-purple-900/30 to-indigo-900/30 border-2 border-purple-500/50 rounded-2xl p-8">
+          <h3 className="text-2xl font-bold text-white mb-3">View the Complete Project</h3>
+          <p className="text-slate-300 mb-6">Explore the full codebase and documentation</p>
+          <div className="flex justify-center gap-4">
+            <a href="https://app.hex.tech/019afdd8-e860-700c-b0c8-831a229ab3e2/hex/Suno-Analytics-0324mSrPnSfuHpm0KslsIr/draft/logic?view=app" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-semibold rounded-lg cursor-pointer">
+              View HEX Dashboard
+            </a>
+            <a href="https://github.com/neetisharma019/suno-analytics-demo" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white font-semibold rounded-lg cursor-pointer">
+              View GitHub Code
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default SunoAnalyticsPipeline;
+
