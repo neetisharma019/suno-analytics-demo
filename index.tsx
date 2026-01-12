@@ -486,4 +486,3 @@ GROUP BY event_date`
   );
 };
 
-export default SunoAnalyticsPipeline;
