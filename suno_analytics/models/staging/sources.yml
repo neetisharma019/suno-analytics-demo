@@ -13,4 +13,3 @@ sources:
         description: "Raw event data from user interactions - CSV file at ../data/raw_events.csv"
       - name: raw_subscriptions
         description: "Raw subscription data - CSV file at ../data/raw_subscriptions.csv"
-

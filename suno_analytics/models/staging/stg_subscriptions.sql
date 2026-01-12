@@ -5,12 +5,13 @@ with source as (
 renamed as (
     select
         user_id,
-        plan_tier,
-        cast(is_active as boolean) as is_active,
-        cast(current_period_start as date) as current_period_start,
-        cast(current_period_end as date) as current_period_end
+        plan,
+        cast(subscription_start as date) as subscription_start,
+        cast(subscription_end as date) as subscription_end,
+        cast(is_trial as boolean) as is_trial,
+        cast(converted_to_paid as boolean) as converted_to_paid,
+        cast(conversion_timestamp as timestamp) as conversion_timestamp
     from source
 )
 
 select * from renamed
-
