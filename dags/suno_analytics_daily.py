@@ -51,3 +51,6 @@ dbt_test = BashOperator(
 # Set task dependencies
 dbt_deps >> dbt_run >> dbt_test
 
+
+
+
