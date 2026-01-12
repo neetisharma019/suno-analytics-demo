@@ -1,0 +1,7 @@
+suno_analytics:
+  outputs:
+    dev:
+      type: duckdb
+      path: /Users/neetisharma/Suno-Studio_Analytics/suno-analytics-demo/suno_analytics/suno_analytics.duckdb
+      schema: main
+  target: dev

@@ -1,0 +1,15 @@
+version: 2
+
+# Note: For DuckDB, we use read_csv() directly in the staging models
+# This sources.yml file is kept for documentation purposes
+sources:
+  - name: raw_data
+    description: "Raw CSV data files located in ../data/"
+    schema: main
+    tables:
+      - name: raw_users
+        description: "Raw user signup data - CSV file at ../data/raw_users.csv"
+      - name: raw_events
+        description: "Raw event data from user interactions - CSV file at ../data/raw_events.csv"
+      - name: raw_subscriptions
+        description: "Raw subscription data - CSV file at ../data/raw_subscriptions.csv"

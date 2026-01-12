@@ -1,0 +1,195 @@
+version: 2
+
+models:
+  - name: stg_events
+    description: "Staging model for event data"
+    columns:
+      - name: event_id
+        description: "Unique identifier for each event"
+        tests:
+          - unique
+          - not_null
+      - name: event_timestamp
+        description: "Timestamp when the event occurred"
+        tests:
+          - not_null
+      - name: user_id
+        description: "User identifier"
+        tests:
+          - not_null
+      - name: event_type
+        description: "Type of event"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['song_generated', 'song_downloaded', 'song_published', 'song_extended', 'song_remixed', 'lyric_ai_used', 'app_opened','effect_added']
+      - name: event_date
+        description: "Date of the event"
+        tests:
+          - not_null
+
+  - name: stg_users
+    description: "Staging model for user data"
+    columns:
+      - name: user_id
+        description: "Unique identifier for each user"
+        tests:
+          - unique
+          - not_null
+      - name: signup_timestamp
+        description: "Timestamp when user signed up"
+        tests:
+          - not_null
+      - name: region
+        description: "User's region"
+        tests:
+          - not_null
+      - name: acquisition_channel
+        description: "Channel that acquired the user"
+        tests:
+          - not_null
+      - name: is_creator
+        description: "Whether the user is a creator"
+        tests:
+          - not_null
+      - name: platform
+        description: "Platform used by the user"
+        tests:
+          - not_null
+
+  - name: stg_subscriptions
+    description: "Staging model for subscription data"
+    columns:
+      - name: user_id
+        description: "User identifier"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_users')
+              field: user_id
+      - name: plan
+        description: "Subscription plan"
+        tests:
+          - not_null
+      - name: is_trial
+        description: "Whether the subscription is a trial"
+        tests:
+          - not_null
+      - name: converted_to_paid
+        description: "Whether the user converted to paid"
+        tests:
+          - not_null
+
+  - name: dim_user
+    description: "User dimension table"
+    columns:
+      - name: user_id
+        description: "Unique identifier for each user"
+        tests:
+          - unique
+          - not_null
+      - name: signup_timestamp
+        description: "Timestamp when user signed up"
+        tests:
+          - not_null
+      - name: region
+        description: "User's region"
+        tests:
+          - not_null
+      - name: acquisition_channel
+        description: "Channel that acquired the user"
+        tests:
+          - not_null
+      - name: is_creator
+        description: "Whether the user is a creator"
+        tests:
+          - not_null
+      - name: platform
+        description: "Platform used by the user"
+        tests:
+          - not_null
+
+  - name: dim_song
+    description: "Song dimension table with one row per generated song"
+    columns:
+      - name: song_id
+        description: "Unique identifier for each song"
+        tests:
+          - unique
+          - not_null
+      - name: user_id
+        description: "User who created the song"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_user')
+              field: user_id
+      - name: first_generated_at
+        description: "Timestamp when the song was first generated"
+        tests:
+          - not_null
+
+  - name: fact_user_day
+    description: "Daily user activity fact table"
+    columns:
+      - name: user_id
+        description: "User identifier"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_user')
+              field: user_id
+      - name: event_date
+        description: "Date of the activity"
+        tests:
+          - not_null
+      - name: active_flag
+        description: "Whether the user had any activity on this day"
+        tests:
+          - not_null
+      - name: generated_cnt
+        description: "Number of songs generated on this day"
+        tests:
+          - not_null
+      - name: downloaded_cnt
+        description: "Number of songs downloaded on this day"
+        tests:
+          - not_null
+      - name: published_cnt
+        description: "Number of songs published on this day"
+        tests:
+          - not_null
+
+  - name: mrt_product_funnel
+    description: "Product funnel metrics per user: signup → first song → first download → first publish"
+    columns:
+      - name: user_id
+        description: "User identifier"
+        tests:
+          - unique
+          - not_null
+      - name: has_generated_song
+        description: "Whether the user has generated at least one song"
+        tests:
+          - not_null
+      - name: has_downloaded_song
+        description: "Whether the user has downloaded at least one song"
+        tests:
+          - not_null
+      - name: has_published_song
+        description: "Whether the user has published at least one song"
+        tests:
+          - not_null
+      - name: activation_window_bucket
+        description: "Time bucket for activation (time to first song)"
+        tests:
+          - accepted_values:
+              values: ['<5m', '5-30m', '30m-24h', '>24h']
+              config:
+                where: "activation_window_bucket is not null"
+      - name: user_segment
+        description: "User segment based on activity"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['publisher', 'downloader_only', 'generator_only', 'viewer']
