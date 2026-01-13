@@ -1,8 +1,4 @@
 
-  
-    
-    
-
     create  table
       "suno_analytics"."main"."stg_events__dbt_tmp"
   
