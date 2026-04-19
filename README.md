@@ -320,16 +320,6 @@ suno-analytics-demo/
 
 - **mrt_product_funnel**: Business-ready metrics for product analytics
 
-## Why This Demonstrates Analytics Engineering Skills
-
-1. **Modern Stack**: Uses DuckDB (fast analytical database) + dbt (transformation framework)
-2. **Layered Architecture**: Follows medallion architecture (bronze → silver → gold)
-3. **Data Quality**: Comprehensive testing with dbt tests
-4. **Documentation**: Self-documenting with schema.yml descriptions
-5. **Orchestration**: Airflow DAG for production scheduling
-6. **Visualization**: React dashboard + Python dashboard for stakeholder communication
-7. **Best Practices**: Modular, testable, maintainable code structure
-
 ## Running the Dashboard
 
 ### React Dashboard (Frontend)
